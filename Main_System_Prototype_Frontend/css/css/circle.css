@@ -1,0 +1,49 @@
+.circle-container {
+	position: relative;	
+	margin: 0 auto;	
+}	
+		
+.circle-container, .front{
+	width: 41px;
+	height: 41px;
+	background-color: rgba(0,0,0,0);
+}
+		
+.circle {
+	position: relative;
+	width: 41px;
+	height: 41px;
+}
+		
+.front{
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+		
+.front {
+	background-color: #fff;
+	z-index: 2;
+}
+		
+.front p {
+	margin-top: 0.7em;
+	font-weight: 100;
+	font-size: 1em;
+	text-align: center;
+}
+		
+.outer-ring {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	width: 51px;
+	height: 51px;
+	background-color: rgba(80, 120, 131, 1);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+	z-index: 2;
+}

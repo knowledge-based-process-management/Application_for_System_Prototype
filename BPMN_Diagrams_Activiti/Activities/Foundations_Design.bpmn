@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="sp_fd" name="Foundations - Design" isExecutable="true">
+    <startEvent id="se_fd" name="Start"></startEvent>
+    <userTask id="ut_fd_taui" name="Track and Update Issues" activiti:candidateGroups="System Architect"></userTask>
+    <userTask id="ut_fd_r" name="Rescope" activiti:candidateGroups="System Architect"></userTask>
+    <userTask id="ut_fd_gdd" name="Generate Design Docs" activiti:candidateGroups="System Architect"></userTask>
+    <endEvent id="ee_fd" name="End"></endEvent>
+    <sequenceFlow id="f_fd_1" sourceRef="se_fd" targetRef="ut_fd_taui"></sequenceFlow>
+    <sequenceFlow id="f_fd_2" sourceRef="ut_fd_taui" targetRef="ut_fd_r"></sequenceFlow>
+    <sequenceFlow id="f_fd_3" sourceRef="ut_fd_r" targetRef="ut_fd_gdd"></sequenceFlow>
+    <sequenceFlow id="f_fd_4" sourceRef="ut_fd_gdd" targetRef="ee_fd"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_sp_fd">
+    <bpmndi:BPMNPlane bpmnElement="sp_fd" id="BPMNPlane_sp_fd">
+      <bpmndi:BPMNShape bpmnElement="se_fd" id="BPMNShape_se_fd">
+        <omgdc:Bounds height="35.0" width="35.0" x="20.0" y="60.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fd_taui" id="BPMNShape_ut_fd_taui">
+        <omgdc:Bounds height="55.0" width="151.0" x="80.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fd_r" id="BPMNShape_ut_fd_r">
+        <omgdc:Bounds height="55.0" width="105.0" x="260.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fd_gdd" id="BPMNShape_ut_fd_gdd">
+        <omgdc:Bounds height="55.0" width="141.0" x="390.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_fd" id="BPMNShape_ee_fd">
+        <omgdc:Bounds height="35.0" width="35.0" x="560.0" y="60.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="f_fd_1" id="BPMNEdge_f_fd_1">
+        <omgdi:waypoint x="55.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="80.0" y="77.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fd_2" id="BPMNEdge_f_fd_2">
+        <omgdi:waypoint x="231.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="260.0" y="77.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fd_3" id="BPMNEdge_f_fd_3">
+        <omgdi:waypoint x="365.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="390.0" y="77.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fd_4" id="BPMNEdge_f_fd_4">
+        <omgdi:waypoint x="531.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="560.0" y="77.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

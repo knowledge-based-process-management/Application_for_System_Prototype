@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="sp_ecr" name="Expert Code Review" isExecutable="true">
+    <startEvent id="se_ecr" name="Start"></startEvent>
+    <userTask id="ut_ecr_ecr" name="Expert Code Review" activiti:candidateGroups="Implementation Team"></userTask>
+    <endEvent id="ee_ecr" name="End"></endEvent>
+    <sequenceFlow id="f_ecr_1" sourceRef="se_ecr" targetRef="ut_ecr_ecr"></sequenceFlow>
+    <sequenceFlow id="f_ecr_2" sourceRef="ut_ecr_ecr" targetRef="ee_ecr"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_sp_ecr">
+    <bpmndi:BPMNPlane bpmnElement="sp_ecr" id="BPMNPlane_sp_ecr">
+      <bpmndi:BPMNShape bpmnElement="se_ecr" id="BPMNShape_se_ecr">
+        <omgdc:Bounds height="35.0" width="35.0" x="20.0" y="30.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ecr_ecr" id="BPMNShape_ut_ecr_ecr">
+        <omgdc:Bounds height="55.0" width="131.0" x="90.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_ecr" id="BPMNShape_ee_ecr">
+        <omgdc:Bounds height="35.0" width="35.0" x="250.0" y="30.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="f_ecr_1" id="BPMNEdge_f_ecr_1">
+        <omgdi:waypoint x="55.0" y="47.0"></omgdi:waypoint>
+        <omgdi:waypoint x="90.0" y="47.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ecr_2" id="BPMNEdge_f_ecr_2">
+        <omgdi:waypoint x="221.0" y="47.0"></omgdi:waypoint>
+        <omgdi:waypoint x="250.0" y="47.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

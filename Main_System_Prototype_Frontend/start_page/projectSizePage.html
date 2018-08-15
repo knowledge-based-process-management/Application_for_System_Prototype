@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <link rel="stylesheet" href="lib/Semantic-UI/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="stylesheet" href="css/less/range.css" type="text/css">
+    <link rel="stylesheet" href="css/huawei_cocomo_prototype_style.css" type="text/css">
+    <script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+   <!-- // <script type="text/javascript" src="./lib/less.min.js"></script> -->
+    <script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+    <script type="text/javascript" src="./control/config.js"></script>
+    <script type="text/javascript" src="./model/Adapter.js"></script>
+    <script type="text/javascript" src="./model/Process.js"></script>
+    <script type="text/javascript" src="./control/CocomoCalculator.js"></script>
+    <script type="text/javascript" src="./control/projectSizeControl.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+
+   <!--  <div class="headtitle">
+      <div class="ui icon message fixed-width-message">
+        <i class="options icon"></i>
+        <div class="content">
+          <div class="header">
+            Start New Project
+          </div>
+          <p id="message_info">Specify the Decision Factors Below</p>
+        </div>
+      </div>
+    </div> -->
+
+     <div id="breadcrumb" class="ui grid">
+        <div class="row">
+          <div class="three wide column"></div>
+          <div class="six wide column">
+      <ul class="crumbs">
+        <li class="first"><a href="#" style="z-index:9;"><span></span>Project Factors</a></li>
+        <li><a href="#" style="z-index:8;"  class="selected">Project Size</a></li>
+        <li><a href="#" style="z-index:7;">Estimated Results</a></li>
+      </ul>
+    </div>
+  </div>
+    </div>
+
+     <div style="clear:both"></div>
+
+
+       <div style="clear:both"></div>
+    <div id="content">
+      <div class="ui grid">
+
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Product Type:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+           <!--  <div class="label">
+              <font class="left">Mobile App</font><font class="right">Mission-critical infrastructure</font>
+            </div>
+            <div>
+              <span class="output">
+                <span id="product_type_value" class="range_value"></span>
+              </span>
+              <input type="range" id="product_type" min="1" max="10" value="5"/>
+            </div> -->
+            <div class="label_container"><span id="product_type_label">Not Selected</span></div>
+            <div class="ui fluid dropdown" style="display:none">
+              <input type="hidden" id="product_type">
+              <i class="inverted dropdown icon"></i>
+              <div class="default text">Select product type</div>
+              <div class="menu">
+                <div class="item" data-value="Web Server">Web Server</div>
+                <div class="item" data-value="Mobile/Internet Feature">Mobile/Internet Feature</div>
+                <div class="item" data-value="R&D Tools">R&D Tools</div>
+                <div class="item" data-value="Security kernel; Safety-critical LSI Chip">Security kernel; Safety-critical LSI Chip</div>
+                <div class="item" data-value="Multi-sensor Control Device/Router/Switch">Multi-sensor Control Device/Router/Switch</div>
+                <div class="item" data-value="Legacy system">Legacy system</div>
+                <div class="item" data-value="Carrier Class Large Scale SW Intensive; Other Regulated Environments">Carrier Class Large Scale SW Intensive; Other Regulated Environments</div>
+                <div class="item" data-value="Digital City; Industry Vertical (Oil & Gas)">Digital City; Industry Vertical (Oil & Gas)</div>
+                <div class="item" data-value="New IOT Product Line">New IOT Product Line</div>
+              </div>
+            </div>
+            <!-- <hr> -->
+
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+        <!-- Typical Change Rate for Increment -->
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Project Size (SLOC):</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="project_size" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value"><=1k</font>
+              <font class="low_value">10k</font>
+              <font class="nominal_value">50K</font>
+              <font class="high_value">100K</font>
+              <font class="very_high_value">125K</font>
+              <font class="extra_high_value">>=150K</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="chng_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        </div>
+      </div>
+
+   <!--  <div id="content">
+      <div class="ui grid">
+
+        <div class="row">
+          <div class="three wide column"></div>
+          <div class="one wide column">
+            <div class="type"></div>
+          </div>
+          <div class="two wide column "><p class="label-part-large">SLOC</p></div>
+          <div class="two wide column"><p class="label-part-large">% Design Modified</p><p class="label-part-large"></p></div>
+          <div class="two wide column"><p class="label-part-large">% Code Modified</p><p class="label-part-large"></p></div>
+          <div class="two wide column"><p class="label-part-large">% Integration Modified</p><p class="label-part-large"></p></div>
+        </div>
+
+      <div class="row">
+        <div class="three wide column"></div>
+          <div class="one wide column">
+            <div class="type"><p class="label-large">New:</p></div>
+          </div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="new_sloc"></div>
+          <div class="two wide column"></div>
+          <div class="two wide column"></div>
+          <div class="two wide column"></div>
+        </div>
+
+        <div class="row">
+          <div class="three wide column"></div>
+          <div class="one wide column">
+            <div class="type"><p class="label-large">Reused:</p></div>
+          </div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="reused_sloc"></div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="reused_sloc_design_modified"></div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="reused_sloc_code_modified"></div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="reused_sloc_integration_modified"></div>
+        </div>
+
+       <div class="row">
+        <div class="three wide column"></div>
+          <div class="one wide column">
+            <div class="type"><p class="label-large">Modified:</p></div>
+          </div>
+         <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="modified_sloc"></div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="modified_sloc_design_modified"></div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="modified_sloc_code_modified"></div>
+          <div class="two wide column input-field-container"><input type="text" class="sloc_input_field" id="modified_sloc_integration_modified"></div>
+        </div>
+
+      </div>
+    </div> -->
+
+   <div class="buttongroup">
+
+        <div class="ui animated fade button" id="prev_back_to_factor">
+          <div class="visible content">Back</div>
+          <div class="hidden content">
+            Back to factors input page
+          </div>
+        </div>
+
+        <div class="ui animated fade button" id="estimate_effort">
+          <div class="visible content">Estimate</div>
+          <div class="hidden content">
+            Estimate Project Effort
+          </div>
+        </div>
+
+      </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+	min-width: 900px !important;
+	overflow: auto !important;
+}
+
+#content {
+  padding: 2%;
+  -webkit-animation: rendering 0.5s ease-in;
+  animation: rendering 0.5s ease-in;
+}
+
+.buttongroup {
+	width: 100%;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	vertical-align: middle;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 1.14285714em;
+}
+
+.fade.button {
+	width: 150px;
+	height: 35px;
+	right: 0;
+	margin-left: 2em !important;
+}
+
+.dropdown .menu {
+	min-width: calc(100% + 2px) !important;
+    width: calc(100% + 2px) !important;
+}
+
+.ui.dropdown>.text {
+	color: rgba(255,255,255,.8);
+	font-size: 20px;
+}
+
+hr {
+	display: block;
+    height: 1px;;
+	border-top: 1px solid rgba(255,255,255,.7);
+	opacity: 0.7;
+}
+
+.factor {
+	color: rgba(255,255,255,.7);
+	font-family: "Helvetica Neue",Helvetical,Arial,sans-serif;
+	text-align: right;
+	font-size: 18px;
+}
+
+.label {
+	color: rgba(255,255,255,.7);
+	font-family: "Helvetica Neue",Helvetical,Arial,sans-serif;
+	font-size: 10px;
+	margin-bottom: 10px;
+}
+
+.left {
+	position: absolute;
+	left: 0px;
+	margin-top: -25px;
+}
+
+.right {
+	position: absolute;
+	right: 0px;
+	margin-top:-25px;
+}
+
+.output {
+	min-width: 5px !important;
+	margin-top: -35px;
+	position: absolute;
+	color: rgba(255,255,255,.7);;
+}
+
+.range_value {
+	min-width: 8px !important;
+	min-height: 16px !important;
+	font-family: "Helvetica Neue",Helvetical,Arial,sans-serif;
+}
+
+.row {
+	height: 4.2em;
+}
+
+.row.question {
+	color: rgba(255,255,255,.7);
+	font-family: "Helvetica Neue",Helvetical,Arial,sans-serif;
+	text-align: center;
+	font-size: 18px;
+	height: 2em;
+	margin-top: 1em;
+}
+
+.row.choice {
+	color: rgba(255,255,255,.7);
+	font-family: "Helvetica Neue",Helvetical,Arial,sans-serif;
+	text-align: center;
+	font-size: 18px;
+	height: 2em;
+	margin-bottom: 1em;
+}
+
+.choosed {
+	background-color: #4298f4 !important;
+}
+

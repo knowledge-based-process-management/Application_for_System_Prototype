@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="sp_fs" name="Foundations - Schedule" isExecutable="true">
+    <startEvent id="se_fs" name="Start"></startEvent>
+    <userTask id="ut_fs_dlca" name="Update Life Cycles Plan" activiti:candidateGroups="Project Manager"></userTask>
+    <userTask id="ut_fs_upp" name="Update Project Plan" activiti:candidateGroups="Project Manager"></userTask>
+    <userTask id="ut_fs_aps" name="Adjust Project Settings" activiti:candidateGroups="Project Manager"></userTask>
+    <parallelGateway id="pg_fs_1" name="Parallel Gateway"></parallelGateway>
+    <parallelGateway id="pg_fs_2" name="Parallel Gateway"></parallelGateway>
+    <endEvent id="ee_fs" name="End"></endEvent>
+    <sequenceFlow id="f_fs_1" sourceRef="se_fs" targetRef="pg_fs_1"></sequenceFlow>
+    <sequenceFlow id="f_fs_2" sourceRef="pg_fs_1" targetRef="ut_fs_dlca"></sequenceFlow>
+    <sequenceFlow id="f_fs_3" sourceRef="ut_fs_dlca" targetRef="pg_fs_2"></sequenceFlow>
+    <sequenceFlow id="f_fs_4" sourceRef="pg_fs_1" targetRef="ut_fs_upp"></sequenceFlow>
+    <sequenceFlow id="f_fs_5" sourceRef="ut_fs_upp" targetRef="pg_fs_2"></sequenceFlow>
+    <sequenceFlow id="f_fs_6" sourceRef="pg_fs_2" targetRef="ut_fs_aps"></sequenceFlow>
+    <sequenceFlow id="f_fs_7" sourceRef="ut_fs_aps" targetRef="ee_fs"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_sp_fs">
+    <bpmndi:BPMNPlane bpmnElement="sp_fs" id="BPMNPlane_sp_fs">
+      <bpmndi:BPMNShape bpmnElement="se_fs" id="BPMNShape_se_fs">
+        <omgdc:Bounds height="35.0" width="35.0" x="20.0" y="86.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fs_dlca" id="BPMNShape_ut_fs_dlca">
+        <omgdc:Bounds height="55.0" width="155.0" x="136.0" y="29.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fs_upp" id="BPMNShape_ut_fs_upp">
+        <omgdc:Bounds height="55.0" width="155.0" x="136.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fs_aps" id="BPMNShape_ut_fs_aps">
+        <omgdc:Bounds height="55.0" width="141.0" x="380.0" y="76.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_fs_1" id="BPMNShape_pg_fs_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="80.0" y="83.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_fs_2" id="BPMNShape_pg_fs_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="310.0" y="83.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_fs" id="BPMNShape_ee_fs">
+        <omgdc:Bounds height="35.0" width="35.0" x="550.0" y="86.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_1" id="BPMNEdge_f_fs_1">
+        <omgdi:waypoint x="55.0" y="103.0"></omgdi:waypoint>
+        <omgdi:waypoint x="80.0" y="103.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_2" id="BPMNEdge_f_fs_2">
+        <omgdi:waypoint x="100.0" y="83.0"></omgdi:waypoint>
+        <omgdi:waypoint x="100.0" y="56.0"></omgdi:waypoint>
+        <omgdi:waypoint x="136.0" y="56.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_3" id="BPMNEdge_f_fs_3">
+        <omgdi:waypoint x="291.0" y="56.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="56.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="83.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_4" id="BPMNEdge_f_fs_4">
+        <omgdi:waypoint x="100.0" y="123.0"></omgdi:waypoint>
+        <omgdi:waypoint x="100.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="136.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_5" id="BPMNEdge_f_fs_5">
+        <omgdi:waypoint x="291.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="123.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_6" id="BPMNEdge_f_fs_6">
+        <omgdi:waypoint x="350.0" y="103.0"></omgdi:waypoint>
+        <omgdi:waypoint x="380.0" y="103.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fs_7" id="BPMNEdge_f_fs_7">
+        <omgdi:waypoint x="521.0" y="103.0"></omgdi:waypoint>
+        <omgdi:waypoint x="550.0" y="103.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,141 @@
+/*body {
+	overflow-y: auto !important;
+}
+*/
+.buttongroup {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  margin-left: 1.14285714em;
+}
+
+#back_to_dashboard {
+  width: 150px;
+  height: 35px;
+  right: 0;
+  margin-left: 2em !important;
+}
+
+#content {
+  padding: 1%;
+  -webkit-animation: rendering 2s ease-in;
+  animation: rendering 2s ease-in;
+}
+
+.ui.card {
+  border-radius: 0 !important;
+  text-align: center !important;
+  min-height: 520px;
+}
+
+.card>.content {
+  flex-grow: 0 !important;
+  -webkit-flex-grow: 0 !important;
+}
+
+.card>.content:nth-child(2) {
+  padding: 0;
+  margin: 5%;
+}
+
+.ui.grid {
+  margin-left: 4em !important;
+}
+
+.ui.grid:nth-child(1) {
+  position: relative;
+  top: -1.1em;
+  height: 0;
+}
+
+.one.wide.column:nth-child(1) .circle-container {
+  position: absolute !important;
+  left: -21px;
+  display: none;
+}
+
+.column {
+  padding: 1em 0 !important;
+}
+
+.fixed-width-list {
+ /*   width: 240px !important;
+    min-width: 240px !important;
+    border:1px solid #000000;*/
+}
+
+.fixed-size-item {
+  min-height: 40px;
+
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto; 
+  /*-webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1.14285714em 2em;
+  background: #FFF;
+  color: rgba(0,0,0,.87);
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+/*  border-left: 1px solid rgba(34,36,38,.15);
+  border-right: 1px solid rgba(34,36,38,.15); */
+}
+
+.completed {
+  background: #CCF9CF;
+}
+
+.active {
+  background: #FFFACD;
+}
+
+.fixed-size-item>.content {
+  width: 100% !important;
+}
+
+.percentage {
+  position: absolute;
+  right: 5%;
+  display: none;
+}
+
+.left {
+  left: 5%;
+}
+
+.right {
+  right: 5%;
+}
+
+.complete {
+  color: green;
+}
+
+.incomplete {
+  color: red;
+}

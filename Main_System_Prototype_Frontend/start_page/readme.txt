@@ -1,0 +1,1 @@
+This demo relies on navigation over a few html pages. To make the navigation work, once deploy it on a server, please replace the site-base-url declared in ./control/config.js with the actual server address (ip address and file path).

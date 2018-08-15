@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="Architected_Agile" name="Architected Agile" isExecutable="true">
+    <subProcess id="sp_ep" name="Exploration Phase">
+      <startEvent id="se_ep" name="Start Exploration Phase"></startEvent>
+      <endEvent id="ee_ep" name="End Exploration Phase"></endEvent>
+      <parallelGateway id="pg_ep_1"></parallelGateway>
+      <parallelGateway id="pg_ep_2"></parallelGateway>
+      <parallelGateway id="pg_ep_3"></parallelGateway>
+      <parallelGateway id="pg_ep_4"></parallelGateway>
+      <parallelGateway id="pg_ep_5"></parallelGateway>
+      <parallelGateway id="pg_ep_6"></parallelGateway>
+      <userTask id="ut_ep_acs" name="Analyze Current System" activiti:candidateGroups="Operational Concept Engineer" activiti:category="Exploration_low_risk" activiti:skipExpression="${low_risk == true}">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/analyze_current_system_35FC0B4E.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_Rf-o0Z8mEd643fTIyuRdUA,_4UBSgJ8sEd643fTIyuRdUA</documentation>
+      </userTask>
+      <userTask id="ut_ep_ea" name="Explore Alternatives" activiti:candidateGroups="Feasibility Analyst,Operational Concept Engineer" activiti:category="Exploration_low_risk" activiti:skipExpression="${low_risk == true}">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/explore_alternatives_5B5D5B64.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_Rf-o0Z8mEd643fTIyuRdUA,_DEGJ4Z8tEd643fTIyuRdUA</documentation>
+      </userTask>
+      <userTask id="ut_ep_aaptmr" name="Assess and Plans to Mitigate Risks" activiti:candidateGroups="Feasibility Analyst" activiti:category="Exploration_low_risk" activiti:skipExpression="${low_risk == true}">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/assess_and_plans_to_mitigate_risks_E4D8A416.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_Rf-o0Z8mEd643fTIyuRdUA,_GbEswJ8tEd643fTIyuRdUA, http://ec2-52-53-204-84.us-west-1.compute.amazonaws.com:8686/USCBPMNExplorer1/explore_current_system_assessment_page.html</documentation>
+      </userTask>
+      <userTask id="ut_ep_ipsr" name="Identify Project-specific stakeholder’s responsibilities" activiti:candidateGroups="Life Cycle Planner" activiti:category="Exploration">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/identify_responsibilities_and_skills_4F32B6C2.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_S0e9oZ8mEd643fTIyuRdUA,_MuP7AZ8tEd643fTIyuRdUA</documentation>
+      </userTask>
+      <userTask id="ut_ep_iroesbp" name="Identify responsibilities of each stakeholder by phase" activiti:candidateGroups="Life Cycle Planner" activiti:category="Exploration">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/identify_responsibilities_and_skills_4F32B6C2.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_S0e9oZ8mEd643fTIyuRdUA,_MuP7AZ8tEd643fTIyuRdUA</documentation>
+      </userTask>
+      <userTask id="ut_ep_idts" name="Identify development team's skills" activiti:candidateGroups="Life Cycle Planner" activiti:category="Exploration">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/identify_responsibilities_and_skills_4F32B6C2.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_S0e9oZ8mEd643fTIyuRdUA,_MuP7AZ8tEd643fTIyuRdUA, http://ec2-52-53-204-84.us-west-1.compute.amazonaws.com:8686/USCBPMNExplorer1/plan_manage_project_assessment_page.html</documentation>
+      </userTask>
+      <userTask id="ut_ep_ipa" name="Identify project activities" activiti:candidateGroups="Project Manager,Life Cycle Planner" activiti:category="Exploration">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/detail_project_plan_A18C8BAD.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_S0e9oZ8mEd643fTIyuRdUA,_OWGCkZ8tEd643fTIyuRdUA</documentation>
+      </userTask>
+      <userTask id="ut_ep_apr" name="Assign project resources" activiti:candidateGroups="Project Manager" activiti:category="Exploration">
+        <documentation>http://greenbay.usc.edu/IICSMSw/index.htm#process.icm.base/deliveryprocesses/detail_project_plan_A18C8BAD.html?proc=__doTIZ8kEd643fTIyuRdUA&amp;path=__doTIZ8kEd643fTIyuRdUA,_6qb0cZ8lEd643fTIyuRdUA,_S0e9oZ8mEd643fTIyuRdUA,_OWGCkZ8tEd643fTIyuRdUA</documentation>
+      </userTask>
+      <sequenceFlow id="f_ep_1" sourceRef="se_ep" targetRef="pg_ep_1"></sequenceFlow>
+      <sequenceFlow id="f_ep_2" sourceRef="pg_ep_1" targetRef="pg_ep_3"></sequenceFlow>
+      <sequenceFlow id="f_ep_3" sourceRef="pg_ep_1" targetRef="pg_ep_5"></sequenceFlow>
+      <sequenceFlow id="f_ep_4" sourceRef="pg_ep_3" targetRef="ut_ep_acs"></sequenceFlow>
+      <sequenceFlow id="f_ep_5" sourceRef="pg_ep_3" targetRef="ut_ep_ea"></sequenceFlow>
+      <sequenceFlow id="f_ep_6" sourceRef="pg_ep_3" targetRef="ut_ep_aaptmr"></sequenceFlow>
+      <sequenceFlow id="f_ep_7" sourceRef="pg_ep_5" targetRef="ut_ep_ipsr"></sequenceFlow>
+      <sequenceFlow id="f_ep_8" sourceRef="pg_ep_5" targetRef="ut_ep_ipa"></sequenceFlow>
+      <sequenceFlow id="f_ep_11" sourceRef="ut_ep_acs" targetRef="pg_ep_4"></sequenceFlow>
+      <sequenceFlow id="f_ep_12" sourceRef="ut_ep_ea" targetRef="pg_ep_4"></sequenceFlow>
+      <sequenceFlow id="f_ep_13" sourceRef="ut_ep_aaptmr" targetRef="pg_ep_4"></sequenceFlow>
+      <sequenceFlow id="f_ep_14" sourceRef="ut_ep_ipsr" targetRef="ut_ep_iroesbp"></sequenceFlow>
+      <sequenceFlow id="f_ep_15" sourceRef="ut_ep_iroesbp" targetRef="ut_ep_idts"></sequenceFlow>
+      <sequenceFlow id="f_ep_16" sourceRef="ut_ep_idts" targetRef="pg_ep_6"></sequenceFlow>
+      <sequenceFlow id="f_ep_17" sourceRef="ut_ep_ipa" targetRef="ut_ep_apr"></sequenceFlow>
+      <sequenceFlow id="f_ep_18" sourceRef="ut_ep_apr" targetRef="pg_ep_6"></sequenceFlow>
+      <sequenceFlow id="f_ep_19" sourceRef="pg_ep_4" targetRef="pg_ep_2"></sequenceFlow>
+      <sequenceFlow id="f_ep_20" sourceRef="pg_ep_6" targetRef="pg_ep_2"></sequenceFlow>
+      <sequenceFlow id="f_ep_21" sourceRef="pg_ep_2" targetRef="ee_ep"></sequenceFlow>
+    </subProcess>
+    <subProcess id="sp_vp" name="Valuation Phase">
+      <startEvent id="se_vp" name="Start Valuation Phase"></startEvent>
+      <userTask id="ut_vp_doc" name="Develop Operational Concept" activiti:candidateGroups="Operational Concept Engineer" activiti:category="Valuation"></userTask>
+      <userTask id="ut_vp_ppfe" name="Provide Project Feasibility Evidence" activiti:candidateGroups="Feasibility Analyst" activiti:category="Valuation"></userTask>
+      <userTask id="ut_vp_p" name="Prototyping - Valuation" activiti:candidateGroups="Prototyper" activiti:category="Valuation"></userTask>
+      <userTask id="ut_vp_pamp" name="Plan and Manage Project - Valuation" activiti:candidateGroups="Project Manager" activiti:category="Valuation"></userTask>
+      <userTask id="ut_vp_pwn" name="Perform WinWin Negotiation" activiti:candidateGroups="Requirements Engineer" activiti:category="Valuation"></userTask>
+      <userTask id="ut_vp_dqacp" name="Define Quality and Configuration Policy" activiti:candidateGroups="Quality Focal Point" activiti:category="Valuation"></userTask>
+      <endEvent id="ee_vp" name="End Valuation Phase"></endEvent>
+      <parallelGateway id="pg_vp_1"></parallelGateway>
+      <parallelGateway id="pg_vp_2"></parallelGateway>
+      <sequenceFlow id="f_vp_1" sourceRef="se_vp" targetRef="pg_vp_1"></sequenceFlow>
+      <sequenceFlow id="f_vp_2" sourceRef="pg_vp_1" targetRef="ut_vp_doc"></sequenceFlow>
+      <sequenceFlow id="f_vp_3" sourceRef="pg_vp_1" targetRef="ut_vp_ppfe"></sequenceFlow>
+      <sequenceFlow id="f_vp_4" sourceRef="pg_vp_1" targetRef="ut_vp_p"></sequenceFlow>
+      <sequenceFlow id="f_vp_5" sourceRef="pg_vp_1" targetRef="ut_vp_pamp"></sequenceFlow>
+      <sequenceFlow id="f_vp_6" sourceRef="pg_vp_1" targetRef="ut_vp_pwn"></sequenceFlow>
+      <sequenceFlow id="f_vp_7" sourceRef="pg_vp_1" targetRef="ut_vp_dqacp"></sequenceFlow>
+      <sequenceFlow id="f_vp_8" sourceRef="ut_vp_doc" targetRef="pg_vp_2"></sequenceFlow>
+      <sequenceFlow id="f_vp_9" sourceRef="ut_vp_ppfe" targetRef="pg_vp_2"></sequenceFlow>
+      <sequenceFlow id="f_vp_10" sourceRef="ut_vp_p" targetRef="pg_vp_2"></sequenceFlow>
+      <sequenceFlow id="f_vp_11" sourceRef="ut_vp_pamp" targetRef="pg_vp_2"></sequenceFlow>
+      <sequenceFlow id="f_vp_12" sourceRef="ut_vp_pwn" targetRef="pg_vp_2"></sequenceFlow>
+      <sequenceFlow id="f_vp_13" sourceRef="ut_vp_dqacp" targetRef="pg_vp_2"></sequenceFlow>
+      <sequenceFlow id="f_vp_14" sourceRef="pg_vp_2" targetRef="ee_vp"></sequenceFlow>
+    </subProcess>
+    <subProcess id="sp_fp" name="Foundations Phase">
+      <startEvent id="se_fp" name="Start Foundation Phase"></startEvent>
+      <userTask id="ut_fp_aps" name="Assess Project Status" activiti:candidateGroups="Feasibility Analyst" activiti:category="Foundations"></userTask>
+      <userTask id="ut_fp_pamp" name="Plan and Manage Project - Foundations" activiti:candidateGroups="Project Manager" activiti:category="Foundations"></userTask>
+      <userTask id="ut_fp_mpq" name="Manage Project Quality" activiti:candidateGroups="Quality Focal Point" activiti:category="Foundations"></userTask>
+      <userTask id="ut_fp_p" name="Prototyping - Foundations" activiti:candidateGroups="Prototyper" activiti:category="Foundations"></userTask>
+      <userTask id="ut_fp_dsa" name="Develop Software Architecture" activiti:candidateGroups="System Architect" activiti:category="Foundations"></userTask>
+      <endEvent id="ee_fp" name="End Foundation Phase"></endEvent>
+      <parallelGateway id="pg_fp_1"></parallelGateway>
+      <parallelGateway id="pg_fp_2"></parallelGateway>
+      <sequenceFlow id="f_fp_1" sourceRef="se_fp" targetRef="pg_fp_1"></sequenceFlow>
+      <sequenceFlow id="f_fp_2" sourceRef="pg_fp_1" targetRef="ut_fp_aps"></sequenceFlow>
+      <sequenceFlow id="f_fp_3" sourceRef="pg_fp_1" targetRef="ut_fp_pamp"></sequenceFlow>
+      <sequenceFlow id="f_fp_4" sourceRef="pg_fp_1" targetRef="ut_fp_mpq"></sequenceFlow>
+      <sequenceFlow id="f_fp_5" sourceRef="pg_fp_1" targetRef="ut_fp_p"></sequenceFlow>
+      <sequenceFlow id="f_fp_6" sourceRef="pg_fp_1" targetRef="ut_fp_dsa"></sequenceFlow>
+      <sequenceFlow id="f_fp_7" sourceRef="ut_fp_aps" targetRef="pg_fp_2"></sequenceFlow>
+      <sequenceFlow id="f_fp_8" sourceRef="ut_fp_pamp" targetRef="pg_fp_2"></sequenceFlow>
+      <sequenceFlow id="f_fp_9" sourceRef="ut_fp_mpq" targetRef="pg_fp_2"></sequenceFlow>
+      <sequenceFlow id="f_fp_10" sourceRef="ut_fp_p" targetRef="pg_fp_2"></sequenceFlow>
+      <sequenceFlow id="f_fp_11" sourceRef="ut_fp_dsa" targetRef="pg_fp_2"></sequenceFlow>
+      <sequenceFlow id="f_fp_12" sourceRef="pg_fp_2" targetRef="ee_fp"></sequenceFlow>
+    </subProcess>
+    <subProcess id="sp_dp" name="Development Phase">
+      <startEvent id="se_dp" name="Start Development Phase"></startEvent>
+      <subProcess id="sp_dp_ci" name="Construction Iteration" activiti:async="true">
+        <multiInstanceLoopCharacteristics isSequential="true">
+          <loopCardinality>${loopCounter}</loopCardinality>
+        </multiInstanceLoopCharacteristics>
+      </subProcess>
+      <subProcess id="sp_dp_ti" name="Transition Iteration" activiti:async="true">
+        <multiInstanceLoopCharacteristics isSequential="true">
+          <loopCardinality>${loopCounter}</loopCardinality>
+        </multiInstanceLoopCharacteristics>
+      </subProcess>
+      <userTask id="ut_dp_ccd" name="Core Capability Drivethrough" activiti:candidateGroups="Implementation Team" activiti:category="Development"></userTask>
+      <userTask id="ut_dp_trr" name="Transition Readiness Review" activiti:candidateGroups="Implementation Team" activiti:category="Development"></userTask>
+      <endEvent id="ee_dp" name="End Development Phase"></endEvent>
+      <exclusiveGateway id="eg_dp_1" name="Exclusive Gateway"></exclusiveGateway>
+      <exclusiveGateway id="eg_dp_2" name="Exclusive Gateway"></exclusiveGateway>
+      <sequenceFlow id="f_dp_1" sourceRef="se_dp" targetRef="sp_dp_ci"></sequenceFlow>
+      <sequenceFlow id="f_dp_2" sourceRef="sp_dp_ci" targetRef="eg_dp_1"></sequenceFlow>
+      <sequenceFlow id="f_dp_3" sourceRef="eg_dp_1" targetRef="ut_dp_ccd"></sequenceFlow>
+      <sequenceFlow id="f_dp_4" sourceRef="eg_dp_1" targetRef="ut_dp_trr"></sequenceFlow>
+      <sequenceFlow id="f_dp_5" sourceRef="ut_dp_ccd" targetRef="sp_dp_ci"></sequenceFlow>
+      <sequenceFlow id="f_dp_6" sourceRef="ut_dp_trr" targetRef="eg_dp_2"></sequenceFlow>
+      <sequenceFlow id="f_dp_7" sourceRef="eg_dp_2" targetRef="sp_dp_ci"></sequenceFlow>
+      <sequenceFlow id="f_dp_8" sourceRef="eg_dp_2" targetRef="sp_dp_ti"></sequenceFlow>
+      <sequenceFlow id="f_dp_9" sourceRef="sp_dp_ti" targetRef="ee_dp"></sequenceFlow>
+    </subProcess>
+    <subProcess id="sp_op" name="Operation Phase">
+      <startEvent id="se_op" name="Start Operation Phase"></startEvent>
+      <endEvent id="ee_op" name="End Operation Phase"></endEvent>
+      <sequenceFlow id="f_op_1" sourceRef="se_op" targetRef="ee_op"></sequenceFlow>
+    </subProcess>
+    <startEvent id="se_g" name="Start"></startEvent>
+    <endEvent id="ee_g" name="End"></endEvent>
+    <sequenceFlow id="f_g_1" sourceRef="se_g" targetRef="sp_ep"></sequenceFlow>
+    <sequenceFlow id="f_g_2" sourceRef="sp_op" targetRef="ee_g"></sequenceFlow>
+    <userTask id="ut_vcr" name="Valuation Commitment Review" activiti:candidateGroups="Implementation Team" activiti:category="VCR"></userTask>
+    <userTask id="ut_vcr_aspod" name="Adjust scope, priorities, or discontinue - VCR" activiti:candidateGroups="Implementation Team" activiti:category="VCR"></userTask>
+    <exclusiveGateway id="eg_vcr_1"></exclusiveGateway>
+    <exclusiveGateway id="eg_vcr_2"></exclusiveGateway>
+    <sequenceFlow id="f_vcr_1" sourceRef="sp_ep" targetRef="ut_vcr"></sequenceFlow>
+    <sequenceFlow id="f_vcr_2" sourceRef="ut_vcr" targetRef="eg_vcr_1"></sequenceFlow>
+    <sequenceFlow id="f_vcr_3" name="Acceptable" sourceRef="eg_vcr_1" targetRef="sp_vp">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "acceptable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_vcr_4" name="High, but addressable" sourceRef="eg_vcr_1" targetRef="sp_ep">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "addressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_vcr_5" name="Too high, unaddressable" sourceRef="eg_vcr_1" targetRef="ut_vcr_aspod">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "unaddressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_vcr_6" sourceRef="ut_vcr_aspod" targetRef="eg_vcr_2"></sequenceFlow>
+    <sequenceFlow id="f_vcr_7" sourceRef="eg_vcr_2" targetRef="sp_ep"></sequenceFlow>
+    <sequenceFlow id="f_vcr_8" sourceRef="eg_vcr_2" targetRef="ee_g"></sequenceFlow>
+    <userTask id="ut_fcr" name="Foundations Commitment Review" activiti:candidateGroups="Implementation Team" activiti:category="FCR"></userTask>
+    <userTask id="ut_fcr_aspod" name="Adjust scope, priorities, or discontinue - FCR" activiti:candidateGroups="Implementation Team" activiti:category="FCR"></userTask>
+    <exclusiveGateway id="eg_fcr_1"></exclusiveGateway>
+    <exclusiveGateway id="eg_fcr_2"></exclusiveGateway>
+    <sequenceFlow id="f_fcr_1" sourceRef="sp_vp" targetRef="ut_fcr"></sequenceFlow>
+    <sequenceFlow id="f_fcr_2" sourceRef="ut_fcr" targetRef="eg_fcr_1"></sequenceFlow>
+    <sequenceFlow id="f_fcr_3" name="Acceptable" sourceRef="eg_fcr_1" targetRef="sp_fp">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "acceptable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_fcr_4" name="High, but addressable" sourceRef="eg_fcr_1" targetRef="sp_vp">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "addressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_fcr_5" name="Too high, unaddressable" sourceRef="eg_fcr_1" targetRef="ut_fcr_aspod">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "unaddressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_fcr_6" sourceRef="ut_fcr_aspod" targetRef="eg_fcr_2"></sequenceFlow>
+    <sequenceFlow id="f_fcr_7" sourceRef="eg_fcr_2" targetRef="sp_vp"></sequenceFlow>
+    <sequenceFlow id="f_fcr_8" sourceRef="eg_fcr_2" targetRef="ee_g"></sequenceFlow>
+    <userTask id="ut_dcr" name="Development Commitment Review" activiti:candidateGroups="Implementation Team" activiti:category="DCR"></userTask>
+    <userTask id="ut_dcr_aspod" name="Adjust scope, prioirties, or discontinue - DCR" activiti:candidateGroups="Implementation Team" activiti:category="DCR"></userTask>
+    <exclusiveGateway id="eg_dcr_1"></exclusiveGateway>
+    <exclusiveGateway id="eg_dcr_2"></exclusiveGateway>
+    <sequenceFlow id="f_dcr_1" sourceRef="sp_fp" targetRef="ut_dcr"></sequenceFlow>
+    <sequenceFlow id="f_dcr_2" sourceRef="ut_dcr" targetRef="eg_dcr_1"></sequenceFlow>
+    <sequenceFlow id="f_dcr_3" name="Acceptable" sourceRef="eg_dcr_1" targetRef="sp_dp">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "acceptable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_dcr_4" name="High, but addressable" sourceRef="eg_dcr_1" targetRef="sp_fp">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "addressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_dcr_5" name="Too high, unaddressable" sourceRef="eg_dcr_1" targetRef="ut_dcr_aspod">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "unaddressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_dcr_6" sourceRef="ut_dcr_aspod" targetRef="eg_dcr_2"></sequenceFlow>
+    <sequenceFlow id="f_dcr_7" sourceRef="eg_dcr_2" targetRef="sp_fp"></sequenceFlow>
+    <sequenceFlow id="f_dcr_8" sourceRef="eg_dcr_2" targetRef="ee_g"></sequenceFlow>
+    <userTask id="ut_ocr" name="Operation Commitment Review" activiti:candidateGroups="Implementation Team" activiti:category="OCR"></userTask>
+    <userTask id="ut_ocr_aspod" name="Adjust scope, priorities, or discontinue - OCR" activiti:candidateGroups="Implementation Team" activiti:category="OCR"></userTask>
+    <exclusiveGateway id="eg_ocr_1"></exclusiveGateway>
+    <exclusiveGateway id="eg_ocr_2"></exclusiveGateway>
+    <sequenceFlow id="f_ocr_1" sourceRef="sp_dp" targetRef="ut_ocr"></sequenceFlow>
+    <sequenceFlow id="f_ocr_2" sourceRef="ut_ocr" targetRef="eg_ocr_1"></sequenceFlow>
+    <sequenceFlow id="f_ocr_3" name="Acceptable" sourceRef="eg_ocr_1" targetRef="sp_op">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "acceptable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_ocr_4" name="High, but addressable" sourceRef="eg_ocr_1" targetRef="sp_dp">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "addressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_ocr_5" name="Too high, unaddressable" sourceRef="eg_ocr_1" targetRef="ut_ocr_aspod">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${exec_default == "unaddressable"}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="f_ocr_6" sourceRef="ut_ocr_aspod" targetRef="eg_ocr_2"></sequenceFlow>
+    <sequenceFlow id="f_ocr_7" sourceRef="eg_ocr_2" targetRef="sp_dp"></sequenceFlow>
+    <sequenceFlow id="f_ocr_8" sourceRef="eg_ocr_2" targetRef="ee_g"></sequenceFlow>
+    <dataObject id="exec_default" name="exec_default" itemSubjectRef="xsd:string">
+      <extensionElements>
+        <activiti:value>addressable</activiti:value>
+      </extensionElements>
+    </dataObject>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Architected_Agile">
+    <bpmndi:BPMNPlane bpmnElement="Architected_Agile" id="BPMNPlane_Architected_Agile">
+      <bpmndi:BPMNShape bpmnElement="sp_ep" id="BPMNShape_sp_ep">
+        <omgdc:Bounds height="471.0" width="799.0" x="122.0" y="0.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="se_ep" id="BPMNShape_se_ep">
+        <omgdc:Bounds height="35.0" width="35.0" x="140.0" y="143.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_ep" id="BPMNShape_ee_ep">
+        <omgdc:Bounds height="35.0" width="35.0" x="870.0" y="143.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ep_1" id="BPMNShape_pg_ep_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="200.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ep_2" id="BPMNShape_pg_ep_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="810.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ep_3" id="BPMNShape_pg_ep_3">
+        <omgdc:Bounds height="40.0" width="40.0" x="250.0" y="77.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ep_4" id="BPMNShape_pg_ep_4">
+        <omgdc:Bounds height="40.0" width="40.0" x="720.0" y="13.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ep_5" id="BPMNShape_pg_ep_5">
+        <omgdc:Bounds height="40.0" width="40.0" x="240.0" y="377.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ep_6" id="BPMNShape_pg_ep_6">
+        <omgdc:Bounds height="40.0" width="40.0" x="716.0" y="377.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_acs" id="BPMNShape_ut_ep_acs">
+        <omgdc:Bounds height="55.0" width="161.0" x="350.0" y="6.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_ea" id="BPMNShape_ut_ep_ea">
+        <omgdc:Bounds height="55.0" width="161.0" x="350.0" y="70.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_aaptmr" id="BPMNShape_ut_ep_aaptmr">
+        <omgdc:Bounds height="78.0" width="161.0" x="350.0" y="133.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_ipsr" id="BPMNShape_ut_ep_ipsr">
+        <omgdc:Bounds height="81.0" width="143.0" x="320.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_iroesbp" id="BPMNShape_ut_ep_iroesbp">
+        <omgdc:Bounds height="81.0" width="143.0" x="490.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_idts" id="BPMNShape_ut_ep_idts">
+        <omgdc:Bounds height="72.0" width="177.0" x="640.0" y="270.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_ipa" id="BPMNShape_ut_ep_ipa">
+        <omgdc:Bounds height="89.0" width="124.0" x="339.0" y="353.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ep_apr" id="BPMNShape_ut_ep_apr">
+        <omgdc:Bounds height="89.0" width="117.0" x="540.0" y="353.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sp_vp" id="BPMNShape_sp_vp">
+        <omgdc:Bounds height="501.0" width="391.0" x="529.0" y="490.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="se_vp" id="BPMNShape_se_vp">
+        <omgdc:Bounds height="35.0" width="35.0" x="539.0" y="680.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vp_doc" id="BPMNShape_ut_vp_doc">
+        <omgdc:Bounds height="61.0" width="161.0" x="650.0" y="510.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vp_ppfe" id="BPMNShape_ut_vp_ppfe">
+        <omgdc:Bounds height="64.0" width="161.0" x="650.0" y="587.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vp_p" id="BPMNShape_ut_vp_p">
+        <omgdc:Bounds height="55.0" width="161.0" x="650.0" y="670.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vp_pamp" id="BPMNShape_ut_vp_pamp">
+        <omgdc:Bounds height="81.0" width="161.0" x="650.0" y="740.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vp_pwn" id="BPMNShape_ut_vp_pwn">
+        <omgdc:Bounds height="61.0" width="161.0" x="650.0" y="824.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vp_dqacp" id="BPMNShape_ut_vp_dqacp">
+        <omgdc:Bounds height="91.0" width="161.0" x="650.0" y="890.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_vp" id="BPMNShape_ee_vp">
+        <omgdc:Bounds height="35.0" width="35.0" x="879.0" y="680.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_vp_1" id="BPMNShape_pg_vp_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="599.0" y="677.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_vp_2" id="BPMNShape_pg_vp_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="819.0" y="677.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sp_fp" id="BPMNShape_sp_fp">
+        <omgdc:Bounds height="404.0" width="381.0" x="130.0" y="890.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="se_fp" id="BPMNShape_se_fp">
+        <omgdc:Bounds height="35.0" width="35.0" x="150.0" y="1087.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fp_aps" id="BPMNShape_ut_fp_aps">
+        <omgdc:Bounds height="60.0" width="141.0" x="260.0" y="911.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fp_pamp" id="BPMNShape_ut_fp_pamp">
+        <omgdc:Bounds height="88.0" width="151.0" x="260.0" y="980.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fp_mpq" id="BPMNShape_ut_fp_mpq">
+        <omgdc:Bounds height="64.0" width="130.0" x="271.0" y="1071.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fp_p" id="BPMNShape_ut_fp_p">
+        <omgdc:Bounds height="55.0" width="141.0" x="270.0" y="1140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fp_dsa" id="BPMNShape_ut_fp_dsa">
+        <omgdc:Bounds height="64.0" width="141.0" x="270.0" y="1203.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_fp" id="BPMNShape_ee_fp">
+        <omgdc:Bounds height="35.0" width="35.0" x="470.0" y="1087.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_fp_1" id="BPMNShape_pg_fp_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="210.0" y="1084.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_fp_2" id="BPMNShape_pg_fp_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="420.0" y="1084.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sp_dp" id="BPMNShape_sp_dp">
+        <omgdc:Bounds height="291.0" width="426.0" x="480.0" y="1310.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="se_dp" id="BPMNShape_se_dp">
+        <omgdc:Bounds height="35.0" width="35.0" x="501.0" y="1351.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sp_dp_ci" id="BPMNShape_sp_dp_ci">
+        <omgdc:Bounds height="63.0" width="173.0" x="580.0" y="1337.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sp_dp_ti" id="BPMNShape_sp_dp_ti">
+        <omgdc:Bounds height="61.0" width="171.0" x="605.0" y="1530.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_dp_ccd" id="BPMNShape_ut_dp_ccd">
+        <omgdc:Bounds height="73.0" width="156.0" x="730.0" y="1410.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_dp_trr" id="BPMNShape_ut_dp_trr">
+        <omgdc:Bounds height="64.0" width="171.0" x="490.0" y="1415.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_dp" id="BPMNShape_ee_dp">
+        <omgdc:Bounds height="35.0" width="35.0" x="805.0" y="1543.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_dp_1" id="BPMNShape_eg_dp_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="670.0" y="1426.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_dp_2" id="BPMNShape_eg_dp_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="555.0" y="1503.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sp_op" id="BPMNShape_sp_op">
+        <omgdc:Bounds height="161.0" width="284.0" x="179.0" y="1610.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="se_op" id="BPMNShape_se_op">
+        <omgdc:Bounds height="35.0" width="35.0" x="219.0" y="1675.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_op" id="BPMNShape_ee_op">
+        <omgdc:Bounds height="35.0" width="35.0" x="389.0" y="1675.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="se_g" id="BPMNShape_se_g">
+        <omgdc:Bounds height="35.0" width="35.0" x="33.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_g" id="BPMNShape_ee_g">
+        <omgdc:Bounds height="35.0" width="35.0" x="301.0" y="1820.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vcr" id="BPMNShape_ut_vcr">
+        <omgdc:Bounds height="80.0" width="130.0" x="124.0" y="646.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_vcr_aspod" id="BPMNShape_ut_vcr_aspod">
+        <omgdc:Bounds height="82.0" width="163.0" x="249.0" y="749.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_vcr_1" id="BPMNShape_eg_vcr_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="295.0" y="657.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_vcr_2" id="BPMNShape_eg_vcr_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="82.0" y="769.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fcr" id="BPMNShape_ut_fcr">
+        <omgdc:Bounds height="77.0" width="143.0" x="777.0" y="1080.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_fcr_aspod" id="BPMNShape_ut_fcr_aspod">
+        <omgdc:Bounds height="81.0" width="170.0" x="600.0" y="1200.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_fcr_1" id="BPMNShape_eg_fcr_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="686.0" y="1104.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_fcr_2" id="BPMNShape_eg_fcr_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="940.0" y="1215.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_dcr" id="BPMNShape_ut_dcr">
+        <omgdc:Bounds height="85.0" width="137.0" x="122.0" y="1416.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_dcr_aspod" id="BPMNShape_ut_dcr_aspod">
+        <omgdc:Bounds height="82.0" width="162.0" x="258.0" y="1519.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_dcr_1" id="BPMNShape_eg_dcr_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="299.0" y="1428.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_dcr_2" id="BPMNShape_eg_dcr_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="140.0" y="1531.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ocr" id="BPMNShape_ut_ocr">
+        <omgdc:Bounds height="81.0" width="136.0" x="775.0" y="1660.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ocr_aspod" id="BPMNShape_ut_ocr_aspod">
+        <omgdc:Bounds height="81.0" width="165.0" x="610.0" y="1750.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_ocr_1" id="BPMNShape_eg_ocr_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="694.0" y="1670.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eg_ocr_2" id="BPMNShape_eg_ocr_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="818.0" y="1760.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_1" id="BPMNEdge_f_ep_1">
+        <omgdi:waypoint x="175.0" y="160.0"></omgdi:waypoint>
+        <omgdi:waypoint x="200.0" y="160.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_2" id="BPMNEdge_f_ep_2">
+        <omgdi:waypoint x="220.0" y="140.0"></omgdi:waypoint>
+        <omgdi:waypoint x="220.0" y="98.0"></omgdi:waypoint>
+        <omgdi:waypoint x="250.0" y="97.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_3" id="BPMNEdge_f_ep_3">
+        <omgdi:waypoint x="220.0" y="180.0"></omgdi:waypoint>
+        <omgdi:waypoint x="220.0" y="396.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="397.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_4" id="BPMNEdge_f_ep_4">
+        <omgdi:waypoint x="270.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="269.0" y="35.0"></omgdi:waypoint>
+        <omgdi:waypoint x="350.0" y="33.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_5" id="BPMNEdge_f_ep_5">
+        <omgdi:waypoint x="290.0" y="97.0"></omgdi:waypoint>
+        <omgdi:waypoint x="350.0" y="97.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_6" id="BPMNEdge_f_ep_6">
+        <omgdi:waypoint x="270.0" y="117.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="171.0"></omgdi:waypoint>
+        <omgdi:waypoint x="350.0" y="172.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_7" id="BPMNEdge_f_ep_7">
+        <omgdi:waypoint x="280.0" y="397.0"></omgdi:waypoint>
+        <omgdi:waypoint x="299.0" y="396.0"></omgdi:waypoint>
+        <omgdi:waypoint x="299.0" y="258.0"></omgdi:waypoint>
+        <omgdi:waypoint x="320.0" y="260.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_8" id="BPMNEdge_f_ep_8">
+        <omgdi:waypoint x="280.0" y="397.0"></omgdi:waypoint>
+        <omgdi:waypoint x="339.0" y="397.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_11" id="BPMNEdge_f_ep_11">
+        <omgdi:waypoint x="511.0" y="33.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="33.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_12" id="BPMNEdge_f_ep_12">
+        <omgdi:waypoint x="511.0" y="97.0"></omgdi:waypoint>
+        <omgdi:waypoint x="536.0" y="97.0"></omgdi:waypoint>
+        <omgdi:waypoint x="536.0" y="33.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="33.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_13" id="BPMNEdge_f_ep_13">
+        <omgdi:waypoint x="511.0" y="172.0"></omgdi:waypoint>
+        <omgdi:waypoint x="534.0" y="170.0"></omgdi:waypoint>
+        <omgdi:waypoint x="534.0" y="96.0"></omgdi:waypoint>
+        <omgdi:waypoint x="534.0" y="33.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="33.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_14" id="BPMNEdge_f_ep_14">
+        <omgdi:waypoint x="463.0" y="260.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="260.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_15" id="BPMNEdge_f_ep_15">
+        <omgdi:waypoint x="633.0" y="260.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="260.0"></omgdi:waypoint>
+        <omgdi:waypoint x="728.0" y="270.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_16" id="BPMNEdge_f_ep_16">
+        <omgdi:waypoint x="728.0" y="342.0"></omgdi:waypoint>
+        <omgdi:waypoint x="736.0" y="377.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_17" id="BPMNEdge_f_ep_17">
+        <omgdi:waypoint x="463.0" y="397.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="397.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_18" id="BPMNEdge_f_ep_18">
+        <omgdi:waypoint x="657.0" y="397.0"></omgdi:waypoint>
+        <omgdi:waypoint x="716.0" y="397.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_19" id="BPMNEdge_f_ep_19">
+        <omgdi:waypoint x="760.0" y="33.0"></omgdi:waypoint>
+        <omgdi:waypoint x="829.0" y="33.0"></omgdi:waypoint>
+        <omgdi:waypoint x="830.0" y="140.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_20" id="BPMNEdge_f_ep_20">
+        <omgdi:waypoint x="756.0" y="397.0"></omgdi:waypoint>
+        <omgdi:waypoint x="829.0" y="396.0"></omgdi:waypoint>
+        <omgdi:waypoint x="830.0" y="180.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ep_21" id="BPMNEdge_f_ep_21">
+        <omgdi:waypoint x="850.0" y="160.0"></omgdi:waypoint>
+        <omgdi:waypoint x="870.0" y="160.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_1" id="BPMNEdge_f_vp_1">
+        <omgdi:waypoint x="574.0" y="697.0"></omgdi:waypoint>
+        <omgdi:waypoint x="599.0" y="697.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_2" id="BPMNEdge_f_vp_2">
+        <omgdi:waypoint x="619.0" y="677.0"></omgdi:waypoint>
+        <omgdi:waypoint x="619.0" y="540.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="540.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_3" id="BPMNEdge_f_vp_3">
+        <omgdi:waypoint x="619.0" y="677.0"></omgdi:waypoint>
+        <omgdi:waypoint x="619.0" y="618.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="619.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_4" id="BPMNEdge_f_vp_4">
+        <omgdi:waypoint x="639.0" y="697.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="697.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_5" id="BPMNEdge_f_vp_5">
+        <omgdi:waypoint x="639.0" y="697.0"></omgdi:waypoint>
+        <omgdi:waypoint x="619.0" y="716.0"></omgdi:waypoint>
+        <omgdi:waypoint x="619.0" y="772.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="780.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_6" id="BPMNEdge_f_vp_6">
+        <omgdi:waypoint x="619.0" y="717.0"></omgdi:waypoint>
+        <omgdi:waypoint x="619.0" y="854.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="854.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_7" id="BPMNEdge_f_vp_7">
+        <omgdi:waypoint x="619.0" y="717.0"></omgdi:waypoint>
+        <omgdi:waypoint x="619.0" y="934.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="935.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_8" id="BPMNEdge_f_vp_8">
+        <omgdi:waypoint x="811.0" y="540.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="540.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="677.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_9" id="BPMNEdge_f_vp_9">
+        <omgdi:waypoint x="811.0" y="619.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="618.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="677.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_10" id="BPMNEdge_f_vp_10">
+        <omgdi:waypoint x="811.0" y="697.0"></omgdi:waypoint>
+        <omgdi:waypoint x="819.0" y="697.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_11" id="BPMNEdge_f_vp_11">
+        <omgdi:waypoint x="811.0" y="780.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="772.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="716.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="756.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="717.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_12" id="BPMNEdge_f_vp_12">
+        <omgdi:waypoint x="811.0" y="854.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="854.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="717.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_13" id="BPMNEdge_f_vp_13">
+        <omgdi:waypoint x="811.0" y="935.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="934.0"></omgdi:waypoint>
+        <omgdi:waypoint x="839.0" y="717.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vp_14" id="BPMNEdge_f_vp_14">
+        <omgdi:waypoint x="859.0" y="697.0"></omgdi:waypoint>
+        <omgdi:waypoint x="879.0" y="697.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_1" id="BPMNEdge_f_fp_1">
+        <omgdi:waypoint x="185.0" y="1104.0"></omgdi:waypoint>
+        <omgdi:waypoint x="210.0" y="1104.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_2" id="BPMNEdge_f_fp_2">
+        <omgdi:waypoint x="230.0" y="1084.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="941.0"></omgdi:waypoint>
+        <omgdi:waypoint x="260.0" y="941.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_3" id="BPMNEdge_f_fp_3">
+        <omgdi:waypoint x="230.0" y="1084.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="1025.0"></omgdi:waypoint>
+        <omgdi:waypoint x="260.0" y="1024.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_4" id="BPMNEdge_f_fp_4">
+        <omgdi:waypoint x="250.0" y="1104.0"></omgdi:waypoint>
+        <omgdi:waypoint x="271.0" y="1103.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_5" id="BPMNEdge_f_fp_5">
+        <omgdi:waypoint x="250.0" y="1104.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="1118.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="1168.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="1167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_6" id="BPMNEdge_f_fp_6">
+        <omgdi:waypoint x="230.0" y="1124.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="1229.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="1235.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_7" id="BPMNEdge_f_fp_7">
+        <omgdi:waypoint x="401.0" y="941.0"></omgdi:waypoint>
+        <omgdi:waypoint x="439.0" y="940.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="1084.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_8" id="BPMNEdge_f_fp_8">
+        <omgdi:waypoint x="411.0" y="1024.0"></omgdi:waypoint>
+        <omgdi:waypoint x="439.0" y="1022.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="1084.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_9" id="BPMNEdge_f_fp_9">
+        <omgdi:waypoint x="401.0" y="1103.0"></omgdi:waypoint>
+        <omgdi:waypoint x="420.0" y="1104.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_10" id="BPMNEdge_f_fp_10">
+        <omgdi:waypoint x="411.0" y="1167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="439.0" y="1166.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="1124.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_11" id="BPMNEdge_f_fp_11">
+        <omgdi:waypoint x="411.0" y="1235.0"></omgdi:waypoint>
+        <omgdi:waypoint x="439.0" y="1232.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="1124.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fp_12" id="BPMNEdge_f_fp_12">
+        <omgdi:waypoint x="460.0" y="1104.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0" y="1104.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_1" id="BPMNEdge_f_dp_1">
+        <omgdi:waypoint x="536.0" y="1368.0"></omgdi:waypoint>
+        <omgdi:waypoint x="580.0" y="1368.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_2" id="BPMNEdge_f_dp_2">
+        <omgdi:waypoint x="666.0" y="1400.0"></omgdi:waypoint>
+        <omgdi:waypoint x="690.0" y="1426.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_3" id="BPMNEdge_f_dp_3">
+        <omgdi:waypoint x="710.0" y="1446.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="1446.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_4" id="BPMNEdge_f_dp_4">
+        <omgdi:waypoint x="670.0" y="1446.0"></omgdi:waypoint>
+        <omgdi:waypoint x="661.0" y="1447.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_5" id="BPMNEdge_f_dp_5">
+        <omgdi:waypoint x="808.0" y="1410.0"></omgdi:waypoint>
+        <omgdi:waypoint x="807.0" y="1368.0"></omgdi:waypoint>
+        <omgdi:waypoint x="753.0" y="1368.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_6" id="BPMNEdge_f_dp_6">
+        <omgdi:waypoint x="575.0" y="1479.0"></omgdi:waypoint>
+        <omgdi:waypoint x="575.0" y="1503.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_7" id="BPMNEdge_f_dp_7">
+        <omgdi:waypoint x="595.0" y="1523.0"></omgdi:waypoint>
+        <omgdi:waypoint x="897.0" y="1522.0"></omgdi:waypoint>
+        <omgdi:waypoint x="897.0" y="1368.0"></omgdi:waypoint>
+        <omgdi:waypoint x="753.0" y="1368.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_8" id="BPMNEdge_f_dp_8">
+        <omgdi:waypoint x="575.0" y="1543.0"></omgdi:waypoint>
+        <omgdi:waypoint x="573.0" y="1559.0"></omgdi:waypoint>
+        <omgdi:waypoint x="605.0" y="1560.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dp_9" id="BPMNEdge_f_dp_9">
+        <omgdi:waypoint x="776.0" y="1560.0"></omgdi:waypoint>
+        <omgdi:waypoint x="805.0" y="1560.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_op_1" id="BPMNEdge_f_op_1">
+        <omgdi:waypoint x="254.0" y="1692.0"></omgdi:waypoint>
+        <omgdi:waypoint x="389.0" y="1692.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_g_1" id="BPMNEdge_f_g_1">
+        <omgdi:waypoint x="68.0" y="67.0"></omgdi:waypoint>
+        <omgdi:waypoint x="122.0" y="235.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_g_2" id="BPMNEdge_f_g_2">
+        <omgdi:waypoint x="321.0" y="1771.0"></omgdi:waypoint>
+        <omgdi:waypoint x="318.0" y="1820.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_1" id="BPMNEdge_f_vcr_1">
+        <omgdi:waypoint x="521.0" y="471.0"></omgdi:waypoint>
+        <omgdi:waypoint x="189.0" y="646.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_2" id="BPMNEdge_f_vcr_2">
+        <omgdi:waypoint x="254.0" y="686.0"></omgdi:waypoint>
+        <omgdi:waypoint x="295.0" y="677.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_3" id="BPMNEdge_f_vcr_3">
+        <omgdi:waypoint x="335.0" y="677.0"></omgdi:waypoint>
+        <omgdi:waypoint x="529.0" y="740.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="55.0" x="371.0" y="643.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_4" id="BPMNEdge_f_vcr_4">
+        <omgdi:waypoint x="315.0" y="657.0"></omgdi:waypoint>
+        <omgdi:waypoint x="521.0" y="471.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="279.0" y="594.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_5" id="BPMNEdge_f_vcr_5">
+        <omgdi:waypoint x="315.0" y="697.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="749.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="318.0" y="703.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_6" id="BPMNEdge_f_vcr_6">
+        <omgdi:waypoint x="249.0" y="790.0"></omgdi:waypoint>
+        <omgdi:waypoint x="122.0" y="789.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_7" id="BPMNEdge_f_vcr_7">
+        <omgdi:waypoint x="102.0" y="769.0"></omgdi:waypoint>
+        <omgdi:waypoint x="105.0" y="230.0"></omgdi:waypoint>
+        <omgdi:waypoint x="122.0" y="235.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_vcr_8" id="BPMNEdge_f_vcr_8">
+        <omgdi:waypoint x="102.0" y="809.0"></omgdi:waypoint>
+        <omgdi:waypoint x="102.0" y="900.0"></omgdi:waypoint>
+        <omgdi:waypoint x="102.0" y="1837.0"></omgdi:waypoint>
+        <omgdi:waypoint x="301.0" y="1837.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_1" id="BPMNEdge_f_fcr_1">
+        <omgdi:waypoint x="724.0" y="991.0"></omgdi:waypoint>
+        <omgdi:waypoint x="848.0" y="1080.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_2" id="BPMNEdge_f_fcr_2">
+        <omgdi:waypoint x="777.0" y="1118.0"></omgdi:waypoint>
+        <omgdi:waypoint x="726.0" y="1124.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_3" id="BPMNEdge_f_fcr_3">
+        <omgdi:waypoint x="686.0" y="1124.0"></omgdi:waypoint>
+        <omgdi:waypoint x="511.0" y="1092.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="55.0" x="586.0" y="1111.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_4" id="BPMNEdge_f_fcr_4">
+        <omgdi:waypoint x="706.0" y="1104.0"></omgdi:waypoint>
+        <omgdi:waypoint x="724.0" y="991.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="636.0" y="1012.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_5" id="BPMNEdge_f_fcr_5">
+        <omgdi:waypoint x="706.0" y="1144.0"></omgdi:waypoint>
+        <omgdi:waypoint x="685.0" y="1200.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="706.0" y="1144.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_6" id="BPMNEdge_f_fcr_6">
+        <omgdi:waypoint x="770.0" y="1240.0"></omgdi:waypoint>
+        <omgdi:waypoint x="940.0" y="1235.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_7" id="BPMNEdge_f_fcr_7">
+        <omgdi:waypoint x="960.0" y="1215.0"></omgdi:waypoint>
+        <omgdi:waypoint x="960.0" y="587.0"></omgdi:waypoint>
+        <omgdi:waypoint x="924.0" y="587.0"></omgdi:waypoint>
+        <omgdi:waypoint x="920.0" y="740.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_fcr_8" id="BPMNEdge_f_fcr_8">
+        <omgdi:waypoint x="960.0" y="1255.0"></omgdi:waypoint>
+        <omgdi:waypoint x="959.0" y="1837.0"></omgdi:waypoint>
+        <omgdi:waypoint x="336.0" y="1837.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_1" id="BPMNEdge_f_dcr_1">
+        <omgdi:waypoint x="320.0" y="1294.0"></omgdi:waypoint>
+        <omgdi:waypoint x="190.0" y="1416.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_2" id="BPMNEdge_f_dcr_2">
+        <omgdi:waypoint x="259.0" y="1458.0"></omgdi:waypoint>
+        <omgdi:waypoint x="299.0" y="1448.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_3" id="BPMNEdge_f_dcr_3">
+        <omgdi:waypoint x="339.0" y="1448.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="1455.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="55.0" x="339.0" y="1448.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_4" id="BPMNEdge_f_dcr_4">
+        <omgdi:waypoint x="319.0" y="1428.0"></omgdi:waypoint>
+        <omgdi:waypoint x="320.0" y="1294.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="320.0" y="1376.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_5" id="BPMNEdge_f_dcr_5">
+        <omgdi:waypoint x="319.0" y="1468.0"></omgdi:waypoint>
+        <omgdi:waypoint x="339.0" y="1519.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="320.0" y="1477.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_6" id="BPMNEdge_f_dcr_6">
+        <omgdi:waypoint x="258.0" y="1560.0"></omgdi:waypoint>
+        <omgdi:waypoint x="180.0" y="1551.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_7" id="BPMNEdge_f_dcr_7">
+        <omgdi:waypoint x="140.0" y="1551.0"></omgdi:waypoint>
+        <omgdi:waypoint x="105.0" y="1550.0"></omgdi:waypoint>
+        <omgdi:waypoint x="105.0" y="1148.0"></omgdi:waypoint>
+        <omgdi:waypoint x="130.0" y="1092.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_dcr_8" id="BPMNEdge_f_dcr_8">
+        <omgdi:waypoint x="160.0" y="1571.0"></omgdi:waypoint>
+        <omgdi:waypoint x="160.0" y="1837.0"></omgdi:waypoint>
+        <omgdi:waypoint x="301.0" y="1837.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_1" id="BPMNEdge_f_ocr_1">
+        <omgdi:waypoint x="693.0" y="1601.0"></omgdi:waypoint>
+        <omgdi:waypoint x="843.0" y="1660.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_2" id="BPMNEdge_f_ocr_2">
+        <omgdi:waypoint x="775.0" y="1700.0"></omgdi:waypoint>
+        <omgdi:waypoint x="734.0" y="1690.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_3" id="BPMNEdge_f_ocr_3">
+        <omgdi:waypoint x="694.0" y="1690.0"></omgdi:waypoint>
+        <omgdi:waypoint x="463.0" y="1690.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="55.0" x="621.0" y="1676.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_4" id="BPMNEdge_f_ocr_4">
+        <omgdi:waypoint x="714.0" y="1670.0"></omgdi:waypoint>
+        <omgdi:waypoint x="693.0" y="1601.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="644.0" y="1620.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_5" id="BPMNEdge_f_ocr_5">
+        <omgdi:waypoint x="714.0" y="1710.0"></omgdi:waypoint>
+        <omgdi:waypoint x="692.0" y="1750.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="631.0" y="1710.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_6" id="BPMNEdge_f_ocr_6">
+        <omgdi:waypoint x="775.0" y="1790.0"></omgdi:waypoint>
+        <omgdi:waypoint x="818.0" y="1780.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_7" id="BPMNEdge_f_ocr_7">
+        <omgdi:waypoint x="858.0" y="1780.0"></omgdi:waypoint>
+        <omgdi:waypoint x="929.0" y="1779.0"></omgdi:waypoint>
+        <omgdi:waypoint x="929.0" y="1459.0"></omgdi:waypoint>
+        <omgdi:waypoint x="906.0" y="1455.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ocr_8" id="BPMNEdge_f_ocr_8">
+        <omgdi:waypoint x="838.0" y="1800.0"></omgdi:waypoint>
+        <omgdi:waypoint x="838.0" y="1837.0"></omgdi:waypoint>
+        <omgdi:waypoint x="336.0" y="1837.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

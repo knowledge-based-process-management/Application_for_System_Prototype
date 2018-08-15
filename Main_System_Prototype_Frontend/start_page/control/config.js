@@ -1,0 +1,1 @@
+var site-base-url = "http://ec2-54-67-99-52.us-west-1.compute.amazonaws.com:8686/demo/phase5/project"

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <link rel="stylesheet" href="lib/Semantic-UI/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="stylesheet" href="css/less/range.css" type="text/css">
+    <link rel="stylesheet" href="css/huawei_cocomo_prototype_style.css" type="text/css">
+    <script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+   <!-- // <script type="text/javascript" src="./lib/less.min.js"></script> -->
+    <script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+    <script type="text/javascript" src="./control/config.js"></script>
+    <script type="text/javascript" src="./model/Adapter.js"></script>
+    <script type="text/javascript" src="./model/Process.js"></script>
+    <script type="text/javascript" src="./control/CocomoCalculator.js"></script>
+    <script type="text/javascript" src="./control/factorsInputControl.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+
+ <div id="breadcrumb" class="ui grid">
+        <div class="row">
+          <div class="three wide column"></div>
+          <div class="six wide column">
+      <ul class="crumbs">
+        <li class="first"><a href="#" style="z-index:9;" class="selected"><span></span>Project Factors</a></li>
+        <li><a href="#" style="z-index:8;">Project Size</a></li>
+        <li><a href="#" style="z-index:7;" >Estimated Results</a></li>
+      </ul>
+    </div>
+  </div>
+    </div>
+
+ <div style="clear:both"></div>
+
+    <div id="active_cost_driver_frame">
+    <div id="active_cost_driver_headline">Active Cost Driver</div>
+    <div id="active_cost_driver_panel">
+        <!--  software complexity active cost driver-->
+        <div id="sw_cplx_active_cost_driver" class="content active_cost_driver hidden">
+          <div class="cost_driver_title">Degree of Software Complexity</div>
+          <div class="ui grid">
+        <div class="row">
+          <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Software Complexity:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">IF-ELSE control and procedure calls, simple math expressions, simple DB queries, input forms and reports</div>
+              <div class="rank_description_column">Nested structure, moderate math expressions, single file edition, moderate DB queries, user interface</div>
+              <div class="rank_description_column">Inter module control, standard math and statistics, multiple file editing, complex queries, use of widget </div>
+              <div class="rank_description_column">Homogeneous distributed processing, data stream triggering and data restructuring, multimedia, voice control</div>
+              <div class="rank_description_column">Recursive control, task synchronization, heterogeneous distributed processing, distributed DB, 3D graphics</div>
+              <div class="rank_description_column clearfix">Resource scheduling, microcode-level control, numerical analysis, dynamic relational structure, VR, NL interface</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">SCPX</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+               <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="sw_cplx_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value">0.87</font>
+              <font class="low_value">0.94</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.07</font>
+              <font class="very_high_value">1.14</font>
+               <font class="extra_high_value">1.29</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="sw_cplx_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+ <!--  typical change rate active cost driver-->
+        <div id="chng_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Typical Change Rate for Increment</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Typical Change Rate for Increment:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">0-1%/month</div>
+              <div class="rank_description_column">3%/month</div>
+              <div class="rank_description_column">5%/month</div>
+              <div class="rank_description_column">7%/month</div>
+              <div class="rank_description_column">9%/month</div>
+              <div class="rank_description_column">>=12%/month</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">RATE</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="chng_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value">0.87</font>
+              <font class="low_value">0.94</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.07</font>
+              <font class="very_high_value">1.14</font>
+              <font class="extra_high_value">1.20</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="chng_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+         <!--  required software reliability active cost driver-->
+        <div id="rely_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Required Software Reliability</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Required Software Reliability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">Slight inconvenience</div>
+              <div class="rank_description_column">Low, easily recoverable losses</div>
+              <div class="rank_description_column">Modeterate, easily recoverage losses</div>
+              <div class="rank_description_column">High financial loss</div>
+              <div class="rank_description_column">Risk to human life</div>
+              <div class="rank_description_column">Security breach</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">RELY</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+               <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="rely_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value">0.82</font>
+              <font class="low_value">0.92</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.10</font>
+              <font class="very_high_value">1.26</font>
+               <font class="very_high_value">1.45</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="rely_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+
+          <!--  hardware complexity active cost driver-->
+        <div id="hw_cplx_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Hardware Complexity</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Hardware Complexity:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">Simple read and write statement</div>
+              <div class="rank_description_column">Normal prcessor and I/O device. I/O at GET/PUT level</div>
+              <div class="rank_description_column">Device selection, status checking, and error processing for I/O</div>
+              <div class="rank_description_column">I/O done at physical level. Optimized I/O overlap</div>
+              <div class="rank_description_column">Routines for Interrupt diagnosis, servicing, masking. Performance-intensive embedded system</div>
+              <div class="rank_description_column">Device timing-dependent coding.  Micro-programmed operations.</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">HCPX</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+               <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="hw_cplx_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value">0.87</font>
+              <font class="low_value">0.94</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.07</font>
+              <font class="very_high_value">1.14</font>
+               <font class="extra_high_value">1.29</font>
+            </div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+
+          <!--  database size active cost driver-->
+        <div id="data_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Data Base Size</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Data Base Size:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">Testing DB bytes/Pgm SLOC &le;10</div>
+              <div class="rank_description_column">10&le;D/P&le;100</div>
+              <div class="rank_description_column">100&le;D/P&le;1000</div>
+              <div class="rank_description_column">D/P&ge;1000</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">DATA</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="data_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="low_value">0.93</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.09</font>
+              <font class="very_high_value">1.19</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="data_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+          <!--  analyst capability active cost driver-->
+        <div id="acap_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Analyst Capability</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Analyst Capability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">Analysis and Design Ability &le;15th</div>
+              <div class="rank_description_column">&le;35th</div>
+              <div class="rank_description_column">&le;55th</div>
+              <div class="rank_description_column">&le;75th</div>
+              <div class="rank_description_column">&le;90th</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">ACAP</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="acap_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value">1.50</font>
+              <font class="low_value">1.22</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">0.83</font>
+              <font class="very_high_value">0.67</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="acap_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+
+          <!--  application experience active cost driver-->
+        <div id="apex_active_cost_driver" class="content active_cost_driver hidden">
+          <div class="cost_driver_title">Degree of Application Experience</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Application Experience:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">&le;2 months </div>
+              <div class="rank_description_column">6 months</div>
+              <div class="rank_description_column">1 year</div>
+              <div class="rank_description_column">3 years</div>
+              <div class="rank_description_column">6 years</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+          <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">APEX</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="apex_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="very_low_value">1.22</font>
+              <font class="low_value">1.10</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">0.89</font>
+              <font class="very_high_value">0.81</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="apex_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+      <!--  platform requirement volatility active cost driver-->
+        <div id="pvol_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Platform Requirement Volatility</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Platform Requirement Volatility:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">Major Change/12 months Minor change/1 month</div>
+              <div class="rank_description_column">Major /6 mo Minor/2 weeks</div>
+              <div class="rank_description_column">Major:/2 Minor/1 wk</div>
+              <div class="rank_description_column">Major: 2wk Minor: 2 days</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">PRVL</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="pvol_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="low_value">0.87</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.15</font>
+              <font class="very_high_value">1.30</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="pvol_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+          <!--  supp active cost driver-->
+        <div id="supp_active_cost_driver" class="content active_cost_driver hidden">
+          <!-- <div class="active_cost_driver_headline">supp</div> -->
+          <div class="cost_driver_title">Degree of supp</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Supportability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">25% supp Increase</div>
+              <div class="rank_description_column">50% supp Increase</div>
+              <div class="rank_description_column">75% supp Increase</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">SUPP</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+            </div>
+            <div>
+              <input type="range" id="supp_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="low_value">0.90</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.10</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="supp_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+          <!--  ruse active cost driver-->
+        <div id="ruse_active_cost_driver" class="content active_cost_driver shown">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Degree of Reusability</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Reusability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">None</div>
+              <div class="rank_description_column">Across Project</div>
+              <div class="rank_description_column">Across Program</div>
+              <div class="rank_description_column">Across Product Line</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">RUSE</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="ruse_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="low_value">0.95</font>
+              <font class="nominal_value">1.00</font>
+              <font class="high_value">1.07</font>
+              <font class="very_high_value">1.15</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="ruse_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+  <!--  pr active cost driver-->
+        <div id="pr_active_cost_driver" class="content active_cost_driver shown">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Peer Review</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Peer Review:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+          	<div class="rank_description_column">No people reviews.</div>
+             <div class="rank_description_column">Ad-hoc informal walkthroughs Minimal preparation, no follow-up.</div>
+              <div class="rank_description_column">Well-defined sequence of preparation, review, minimal follow-up.Informal review roles and procedures.</div>
+              <div class="rank_description_column">Formal review roles and procedures applied to all products using basic checklists*, follow up.</div>
+              <div class="rank_description_column">Basic review checklists, root cause analysis. Use of historical data on inspection rate, preparation rate, fault density</div>
+              <div class="rank_description_column">EExtensive review checklists, root cause analysis. Continuous review process improvement. User/Customer involvement, Statistical Process Control.</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">PR</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+             <font class="extra_low">Extra Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="pr_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="extra_low_value">0.0</font>
+              <font class="low_value">0.25</font>
+              <font class="nominal_value">0.4</font>
+              <font class="high_value">0.5</font>
+              <font class="very_high_value">0.58</font>
+              <font class="extra_high_value">0.7</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="pr_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+  <!--  tsl active cost driver-->
+        <div id="tsl_active_cost_driver" class="content active_cost_driver shown">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Level of Testing Sophistication</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Level of Testing Sophistication:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">No testing.</div>
+             <div class="rank_description_column">Ad-hoc testing and debugging. Basic text-based debugger.</div>
+              <div class="rank_description_column">Basic unit test, integration test, system test process. Basic test data management, problem tracking support. Test criteria based on checklists.</div>
+              <div class="rank_description_column">Basic test coverage tools, test support system. Basic test process management. </div>
+              <div class="rank_description_column">More advanced test tools, test data preparation, basic test oracle support, distributed monitoring and analysis, active assertion checking. Metrics-based test process management.</div>
+              <div class="rank_description_column">Highly advanced tools for test oracles, distributed monitoring and analysis, assertion checking.</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">tsl</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+             <font class="extra_low">Extra Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="tsl_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+              <font class="extra_low_value">0.0</font>
+              <font class="low_value">0.23</font>
+              <font class="nominal_value">0.4</font>
+              <font class="high_value">0.5</font>
+              <font class="very_high_value">0.57</font>
+              <font class="extra_high_value">0.60</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="tsl_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+  <!--  aa active cost driver-->
+        <div id="aa_active_cost_driver" class="content active_cost_driver shown">
+          <!-- <div class="active_cost_driver_headline">Active Cost Driver</div> -->
+          <div class="cost_driver_title">Automated Analysis of Code Defects</div>
+          <div class="ui grid">
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Automated Analysis of Code Defects:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+             <div class="rank_description_column">Simple compiler syntax checking.</div>
+             <div class="rank_description_column">Basic compiler or additional tools capabilities for static module-level code analysis, and syntax- and type-checking.</div>
+              <div class="rank_description_column">Some compiler extensions for static module and inter-module level code analysis, and syntax- and type-checking.</div>
+              <div class="rank_description_column">Intermediate-level module and inter-module code syntax and semantic analysis.</div>
+              <div class="rank_description_column">More elaborate requirements/design view consistency checking.</div>
+              <div class="rank_description_column">Formalized* specification and verification. Advanced distributed-processing and temporal analysis, model checking, symbolic execution.</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">AA</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="extra_low">Extra Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="aa_ad" class="slider" min="1" max="10" value="1"/>
+            </div>
+            <div class="value_label">
+               <font class="extra_low_value">0.0</font>
+              <font class="low_value">0.0</font>
+              <font class="nominal_value">0.1</font>
+              <font class="high_value">0.27</font>
+              <font class="very_high_value">0.34</font>
+              <font class="extra_high_value">0.4</font>
+            </div>
+          </div>
+           <div class="one wide column"><span id="aa_ad_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div style="clear:both"></div>
+    <div id="content">
+      <div class="ui grid">
+
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Product Type:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+           <!--  <div class="label">
+              <font class="left">Mobile App</font><font class="right">Mission-critical infrastructure</font>
+            </div>
+            <div>
+              <span class="output">
+                <span id="product_type_value" class="range_value"></span>
+              </span>
+              <input type="range" id="product_type" min="1" max="10" value="5"/>
+            </div> -->
+            <div class="ui fluid dropdown">
+              <input type="hidden" id="product_type">
+              <i class="inverted dropdown icon"></i>
+              <div class="default text">Select product type</div>
+              <div class="menu">
+                <div class="item" data-value="Web Server">Web Server</div>
+                <div class="item" data-value="Mobile/Internet Feature">Mobile/Internet Feature</div>
+                <div class="item" data-value="R&D Tools">R&D Tools</div>
+                <div class="item" data-value="Security kernel; Safety-critical LSI Chip">Security kernel; Safety-critical LSI Chip</div>
+                <div class="item" data-value="Multi-sensor Control Device/Router/Switch">Multi-sensor Control Device/Router/Switch</div>
+                <div class="item" data-value="Legacy system">Legacy system</div>
+                <div class="item" data-value="Carrier Class Large Scale SW Intensive; Other Regulated Environments">Carrier Class Large Scale SW Intensive; Other Regulated Environments</div>
+                <div class="item" data-value="Digital City; Industry Vertical (Oil & Gas)">Digital City; Industry Vertical (Oil & Gas)</div>
+                <div class="item" data-value="New IOT Product Line">New IOT Product Line</div>
+              </div>
+            </div>
+            <hr>
+
+          </div>
+          <div class="one wide column"></div>
+          <div class="four wide column"></div>
+        </div>
+
+        <!-- Typical Change Rate for Increment -->
+        <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Typical Change Rate for Increment:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="chng" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+           <div class="one wide column"><span id="chng_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Required Software Reliability -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Required Software Reliability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="rely" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+           <div class="one wide column"><span id="rely_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Software Complexity -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Software Complexity:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+             <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="sw_cplx" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+           <div class="one wide column"><span id="sw_cplx_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Hardware Complexity -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Hardware Complexity:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="hw_cplx" class="slider"  min="1" max="10" value="1"/>
+            </div>
+          </div>
+           <div class="one wide column"><span id="hw_cplx_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Data Base Size -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Data Base Size:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="data" class="slider"  min="1" max="10" value="1"/>
+            </div>
+          </div>
+           <div class="one wide column"><span id="data_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Application Experience -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Application Experience:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="apex" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="apex_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Analyst Capability -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Analyst Capability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="acap" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="acap_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- Platform Requirement Volatility -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Platform Requirement Volatility:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="pvol" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="pvol_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- supp -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Supportability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+            </div>
+            <div>
+              <input type="range" id="supp" class="slider" min="1" max="10" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="supp_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+        
+        <!-- ruse -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Reusability:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+            </div>
+            <div>
+              <input type="range" id="ruse" class="slider" min="5" max="20" step="1" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="ruse_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <!-- aa -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Automated Analysis of Code Defects:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="aa" class="slider" min="1" max="10" step="1" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="aa_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+
+         <!-- pr -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Peer Review:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="pr" class="slider" min="1" max="10" step="1" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="pr_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+
+<!-- tsl -->
+         <div class="row">
+           <div class="two wide column"></div>
+          <div class="three wide column">
+            <div class="factor">Level of Testing Sophistication:</div>
+          </div>
+          <div class="one wide column"></div>
+          <div class="six wide column">
+            <div class="label">
+              <font class="very_low">Very Low</font>
+              <font class="low">Low</font>
+              <font class="nominal">Nominal</font>
+              <font class="high">High</font>
+              <font class="very_high">Very High</font>
+              <font class="extra_high">Extra High</font>
+            </div>
+            <div>
+              <input type="range" id="tsl" class="slider" min="1" max="10" step="1" value="1"/>
+            </div>
+          </div>
+          <div class="one wide column"><span id="tsl_value" class="range_value output"></span></div>
+          <div class="four wide column"></div>
+        </div>
+
+      </div>
+	   <div class="buttongroup">
+
+        <div class="ui animated fade button" id="export_factor">
+          <div class="visible content">Export</div>
+          <div class="hidden content">
+            Export Factors
+          </div>
+        </div>
+
+        <div class="ui animated fade button" id="reset_factor">
+          <div class="visible content">Reset</div>
+          <div class="hidden content">
+            Clean the Settings
+          </div>
+        </div>
+
+        <div class="ui animated fade button" id="next_to_project_size">
+          <div class="visible content">Next</div>
+          <div class="hidden content">
+            Submit values and go to setting project size
+          </div>
+        </div>
+
+      </div>
+	  
+    </div>
+
+
+  </div>
+</body>
+</html>

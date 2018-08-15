@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estimated Result Page</title>
+    <link rel="stylesheet" href="lib/Semantic-UI/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="stylesheet" href="css/less/range.css" type="text/css">
+    <link rel="stylesheet" href="css/huawei_cocomo_prototype_style.css" type="text/css">
+    <script type="text/javascript" src="./lib/jquery.1.12.4.min.js"></script>
+   <!-- // <script type="text/javascript" src="./lib/less.min.js"></script> -->
+    <script type="text/javascript" src="./lib/Semantic-UI/semantic.min.js"></script>
+    <script type="text/javascript" src="./control/config.js"></script>
+    <script type="text/javascript" src="./model/Adapter.js"></script>
+    <script type="text/javascript" src="./model/Process.js"></script>
+    <script type="text/javascript" src="./control/CocomoCalculator.js"></script>
+    <script type="text/javascript" src="../project/model_api_server/ApiAdapter.js"></script>
+    <script type="text/javascript" src="../project/model_api_server/ProjectCriteria.js"></script>
+    <script type="text/javascript" src="../project/model_api_server/Workflow.js"></script>
+    <script type="text/javascript" src="./control/estimationResultControl.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+
+    <!-- <div class="headtitle">
+      <div class="ui icon message fixed-width-message">
+        <i class="options icon"></i>
+        <div class="content">
+          <div class="header">
+            Start New Project
+          </div>
+          <p id="message_info">Specify the Decision Factors Below</p>
+        </div>
+      </div>
+    </div> -->
+
+    <div id="breadcrumb" class="ui grid">
+        <div class="row">
+          <div class="three wide column"></div>
+          <div class="six wide column">
+      <ul class="crumbs">
+        <li class="first"><a href="#" style="z-index:9;"><span></span>Project Factors</a></li>
+        <li><a href="#" style="z-index:8;">Project Size</a></li>
+        <li><a href="#" style="z-index:7;" class="selected">Estimated Results</a></li>
+      </ul>
+    </div>
+  </div>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <!-- <div id="page-content" class="ui styled accordion">/ -->
+    <div id="page-content">
+    
+    <!-- <div class="title"> -->
+    <!-- <i class="dropdown icon"></i> -->
+    <!-- <span id="estimation_result_summary" class="label-headline"><span>Most Likely Estimated Effort (Person-Months): </span><span id="most_likely_estimated_effort"></span></span> -->
+  	<!-- </div> -->
+    <!-- <div class="content"> -->
+      <div id="detailed_estimation_results" class="ui grid">
+        <div class="row">
+          <div class="one wide column"></div>
+          <div class="three wide column">
+            <div class="type"><p class="label-large">Estimated</p></div>
+          </div>
+          <!-- <div class="one wide column"></div> -->
+          <div class="column-title three wide column"><p class="label-part-large">Effort</p><p class="label-part-large">(Person-Months)</p></div>
+          <div class="column-title three wide column"><p class="label-part-large">Schedule Duration</p><p class="label-part-large">(Months)</p></div>
+          <div class="column-title three wide column"><p class="label-part-large">Productivity</p><p class="label-part-large">(KSLOC per Month)</p></div>
+          <div class="column-title three wide column"><p class="label-part-large">Staff</p><p class="label-part-large">(Number of FTEs)</p></div>
+        </div>
+
+      <div class="row">
+        <div class="one wide column"></div>
+          <div class="three wide column">
+            <div class="type"><p class="label-large">Optimistic:</p></div>
+          </div>
+          <!-- <div class="one wide column"></div> -->
+          <div class="three wide column input-field-container"><p id="optimistic_effort"></p></div>
+          <div class="three wide column input-field-container"><p id="optimistic_schedule_duration"></p></div>
+          <div class="three wide column input-field-container"><p id="optimistic_productivity"></p></div>
+          <div class="three wide column input-field-container"><p id="optimistic_staff"></p></div>
+        </div>
+
+        <div class="row">
+          <div class="one wide column"></div>
+          <div class="three wide column">
+            <div class="type"><p class="label-large">Most Likely:</p></div>
+          </div>
+          <!-- <div class="one wide column"></div> -->
+           <div class="three wide column input-field-container"><p id="most_likely_effort"></p></div>
+          <div class="three wide column input-field-container"><p id="most_likely_schedule_duration"></p></div>
+          <div class="three wide column input-field-container"><p id="most_likely_productivity"></p></div>
+          <div class="three wide column input-field-container"><p id="most_likely_staff"></p></div>
+        </div>
+
+       <div class="row">
+        <div class="one wide column"></div>
+          <div class="three wide column">
+            <div class="type"><p class="label-large">Pessimistic:</p></div>
+          </div>
+          <!-- <div class="one wide column"></div> -->
+          <div class="three wide column input-field-container"><p id="pessimistic_effort"></p></div>
+          <div class="three wide column input-field-container"><p id="pessimistic_schedule_duration"></p></div>
+          <div class="three wide column input-field-container"><p id="pessimistic_productivity"></p></div>
+          <!-- <div class="one wide column"><p id="pessimistic_project_cost"></p></div> -->
+          <div class="three wide column input-field-container"><p id="pessimistic_staff"></p></div>
+        </div>
+
+  
+      <!-- </div> -->
+    </div>
+    </div>
+
+   <div class="buttongroup">
+
+        <div class="ui animated fade button" id="prev_back_to_project_size">
+          <div class="visible content">Back</div>
+          <div class="hidden content">
+            Back to project size
+          </div>
+        </div>
+
+        <div class="ui animated fade button" id="start_new">
+          <div class="visible content">Start</div>
+          <div class="hidden content">
+           Start a new project
+          </div>
+        </div>
+
+      </div>
+  </div>
+</body>
+</html>

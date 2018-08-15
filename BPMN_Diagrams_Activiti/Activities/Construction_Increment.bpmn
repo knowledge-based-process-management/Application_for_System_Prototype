@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="sp_ci" name="Construction Increment" isExecutable="true">
+    <startEvent id="se_ci" name="Start"></startEvent>
+    <parallelGateway id="pg_ci_1" name="Parallel Gateway"></parallelGateway>
+    <userTask id="ut_ci_tc" name="Tailor Components" activiti:candidateGroups="Implementation Team"></userTask>
+    <userTask id="ut_ci_dcc" name="Develop Custom Code" activiti:candidateGroups="Implementation Team"></userTask>
+    <userTask id="ut_ci_dgc" name="Develop Glue Code" activiti:candidateGroups="Implementation Team"></userTask>
+    <parallelGateway id="pg_ci_2" name="Parallel Gateway"></parallelGateway>
+    <userTask id="ut_rca" name="Run Code Analysis" activiti:candidateGroups="Tester"></userTask>
+    <endEvent id="ee_ci" name="End"></endEvent>
+    <sequenceFlow id="f_ci_1" sourceRef="se_ci" targetRef="pg_ci_1"></sequenceFlow>
+    <sequenceFlow id="f_ci_2" sourceRef="pg_ci_1" targetRef="ut_ci_tc"></sequenceFlow>
+    <sequenceFlow id="f_ci_3" sourceRef="ut_ci_tc" targetRef="pg_ci_2"></sequenceFlow>
+    <sequenceFlow id="f_ci_4" sourceRef="pg_ci_1" targetRef="ut_ci_dcc"></sequenceFlow>
+    <sequenceFlow id="f_ci_5" sourceRef="ut_ci_dcc" targetRef="pg_ci_2"></sequenceFlow>
+    <sequenceFlow id="f_ci_6" sourceRef="pg_ci_1" targetRef="ut_ci_dgc"></sequenceFlow>
+    <sequenceFlow id="f_ci_7" sourceRef="ut_ci_dgc" targetRef="pg_ci_2"></sequenceFlow>
+    <sequenceFlow id="f_ci_8" sourceRef="pg_ci_2" targetRef="ut_rca"></sequenceFlow>
+    <sequenceFlow id="f_ci_9" sourceRef="ut_rca" targetRef="ee_ci"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_sp_ci">
+    <bpmndi:BPMNPlane bpmnElement="sp_ci" id="BPMNPlane_sp_ci">
+      <bpmndi:BPMNShape bpmnElement="se_ci" id="BPMNShape_se_ci">
+        <omgdc:Bounds height="35.0" width="35.0" x="20.0" y="100.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ci_1" id="BPMNShape_pg_ci_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="80.0" y="97.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ci_tc" id="BPMNShape_ut_ci_tc">
+        <omgdc:Bounds height="55.0" width="141.0" x="150.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ci_dcc" id="BPMNShape_ut_ci_dcc">
+        <omgdc:Bounds height="55.0" width="141.0" x="150.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ci_dgc" id="BPMNShape_ut_ci_dgc">
+        <omgdc:Bounds height="55.0" width="141.0" x="150.0" y="160.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ci_2" id="BPMNShape_pg_ci_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="320.0" y="97.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_rca" id="BPMNShape_ut_rca">
+        <omgdc:Bounds height="55.0" width="121.0" x="390.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_ci" id="BPMNShape_ee_ci">
+        <omgdc:Bounds height="35.0" width="35.0" x="540.0" y="100.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_1" id="BPMNEdge_f_ci_1">
+        <omgdi:waypoint x="55.0" y="117.0"></omgdi:waypoint>
+        <omgdi:waypoint x="80.0" y="117.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_2" id="BPMNEdge_f_ci_2">
+        <omgdi:waypoint x="100.0" y="97.0"></omgdi:waypoint>
+        <omgdi:waypoint x="100.0" y="47.0"></omgdi:waypoint>
+        <omgdi:waypoint x="150.0" y="47.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_3" id="BPMNEdge_f_ci_3">
+        <omgdi:waypoint x="291.0" y="47.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="47.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="97.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_4" id="BPMNEdge_f_ci_4">
+        <omgdi:waypoint x="120.0" y="117.0"></omgdi:waypoint>
+        <omgdi:waypoint x="150.0" y="117.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_5" id="BPMNEdge_f_ci_5">
+        <omgdi:waypoint x="291.0" y="117.0"></omgdi:waypoint>
+        <omgdi:waypoint x="320.0" y="117.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_6" id="BPMNEdge_f_ci_6">
+        <omgdi:waypoint x="100.0" y="137.0"></omgdi:waypoint>
+        <omgdi:waypoint x="100.0" y="187.0"></omgdi:waypoint>
+        <omgdi:waypoint x="150.0" y="187.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_7" id="BPMNEdge_f_ci_7">
+        <omgdi:waypoint x="291.0" y="187.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="187.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="137.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_8" id="BPMNEdge_f_ci_8">
+        <omgdi:waypoint x="360.0" y="117.0"></omgdi:waypoint>
+        <omgdi:waypoint x="390.0" y="117.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ci_9" id="BPMNEdge_f_ci_9">
+        <omgdi:waypoint x="511.0" y="117.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="117.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

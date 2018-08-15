@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="sp_ti" name="Transition Iteration" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="ut_ti_atp" name="Access Transition Plan" activiti:candidateGroups="Project Manager"></userTask>
+    <userTask id="ut_ti_pt" name="Perform Transition" activiti:candidateGroups="Implementation Team"></userTask>
+    <userTask id="ut_ti_ps" name="Provide Support Plan" activiti:candidateGroups="Life Cycle Planner"></userTask>
+    <userTask id="ut_ti_ptt" name="Provide Training" activiti:candidateGroups="Trainer"></userTask>
+    <parallelGateway id="pg_ti_1" name="Parallel Gateway"></parallelGateway>
+    <parallelGateway id="pg_ti_2" name="Parallel Gateway"></parallelGateway>
+    <endEvent id="ee_ti" name="End"></endEvent>
+    <sequenceFlow id="f_ti_1" sourceRef="startevent1" targetRef="pg_ti_1"></sequenceFlow>
+    <sequenceFlow id="f_ti_2" sourceRef="pg_ti_1" targetRef="ut_ti_atp"></sequenceFlow>
+    <sequenceFlow id="f_ti_3" sourceRef="ut_ti_atp" targetRef="ut_ti_pt"></sequenceFlow>
+    <sequenceFlow id="f_ti_4" sourceRef="ut_ti_pt" targetRef="pg_ti_2"></sequenceFlow>
+    <sequenceFlow id="f_ti_5" sourceRef="pg_ti_1" targetRef="ut_ti_ps"></sequenceFlow>
+    <sequenceFlow id="f_ti_6" sourceRef="ut_ti_ps" targetRef="pg_ti_2"></sequenceFlow>
+    <sequenceFlow id="f_ti_7" sourceRef="pg_ti_1" targetRef="ut_ti_ptt"></sequenceFlow>
+    <sequenceFlow id="f_ti_8" sourceRef="ut_ti_ptt" targetRef="pg_ti_2"></sequenceFlow>
+    <sequenceFlow id="f_ti_9" sourceRef="pg_ti_2" targetRef="ee_ti"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_sp_ti">
+    <bpmndi:BPMNPlane bpmnElement="sp_ti" id="BPMNPlane_sp_ti">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="20.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ti_atp" id="BPMNShape_ut_ti_atp">
+        <omgdc:Bounds height="55.0" width="141.0" x="130.0" y="10.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ti_pt" id="BPMNShape_ut_ti_pt">
+        <omgdc:Bounds height="55.0" width="121.0" x="290.0" y="10.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ti_ps" id="BPMNShape_ut_ti_ps">
+        <omgdc:Bounds height="55.0" width="141.0" x="130.0" y="80.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ut_ti_ptt" id="BPMNShape_ut_ti_ptt">
+        <omgdc:Bounds height="55.0" width="141.0" x="130.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ti_1" id="BPMNShape_pg_ti_1">
+        <omgdc:Bounds height="40.0" width="40.0" x="70.0" y="87.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="pg_ti_2" id="BPMNShape_pg_ti_2">
+        <omgdc:Bounds height="40.0" width="40.0" x="420.0" y="87.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ee_ti" id="BPMNShape_ee_ti">
+        <omgdc:Bounds height="35.0" width="35.0" x="480.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_1" id="BPMNEdge_f_ti_1">
+        <omgdi:waypoint x="55.0" y="107.0"></omgdi:waypoint>
+        <omgdi:waypoint x="70.0" y="107.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_2" id="BPMNEdge_f_ti_2">
+        <omgdi:waypoint x="90.0" y="87.0"></omgdi:waypoint>
+        <omgdi:waypoint x="90.0" y="37.0"></omgdi:waypoint>
+        <omgdi:waypoint x="130.0" y="37.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_3" id="BPMNEdge_f_ti_3">
+        <omgdi:waypoint x="271.0" y="37.0"></omgdi:waypoint>
+        <omgdi:waypoint x="290.0" y="37.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_4" id="BPMNEdge_f_ti_4">
+        <omgdi:waypoint x="411.0" y="37.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="37.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="87.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_5" id="BPMNEdge_f_ti_5">
+        <omgdi:waypoint x="110.0" y="107.0"></omgdi:waypoint>
+        <omgdi:waypoint x="130.0" y="107.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_6" id="BPMNEdge_f_ti_6">
+        <omgdi:waypoint x="271.0" y="107.0"></omgdi:waypoint>
+        <omgdi:waypoint x="420.0" y="107.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_7" id="BPMNEdge_f_ti_7">
+        <omgdi:waypoint x="90.0" y="127.0"></omgdi:waypoint>
+        <omgdi:waypoint x="90.0" y="177.0"></omgdi:waypoint>
+        <omgdi:waypoint x="130.0" y="177.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_8" id="BPMNEdge_f_ti_8">
+        <omgdi:waypoint x="271.0" y="177.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="177.0"></omgdi:waypoint>
+        <omgdi:waypoint x="440.0" y="127.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="f_ti_9" id="BPMNEdge_f_ti_9">
+        <omgdi:waypoint x="460.0" y="107.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="107.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

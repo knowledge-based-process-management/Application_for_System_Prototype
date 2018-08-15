@@ -1,0 +1,17 @@
+package demo;
+
+import java.util.List;
+import java.lang.Integer;
+
+rule "Feasibility Phase"
+salience 100
+lock-on-active true
+when 
+    e : Evidence(phase == "Feasibility")
+    documents : List( size == 6 ) 
+       from collect( 
+           Document( actual >= required) from e.documents 
+        )
+then
+    e.setApproved(true);
+end
